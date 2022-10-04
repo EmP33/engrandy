@@ -1,14 +1,16 @@
-import Title from '@/components/Title';
+import Layout from '@/components/layout';
+import Seo from '@/components/seo';
 
-export default function Home() {
+const Home = () => {
   return (
-    <main>
-      <Title>Hello TypeScript!</Title>
-      <p>A TypeScript starter for Gatsby. Great for advanced users.</p>
-      <p>
-        Follow me on Twitter (
-        <a href="https://twitter.com/jpedroschmitz">@jpedroschmitz</a>)
-      </p>
-    </main>
+    <Layout>
+      <h1>HELLO</h1>
+    </Layout>
   );
-}
+};
+
+export const Head = () => {
+  return <Seo title="Home" />;
+};
+
+export default Home;
