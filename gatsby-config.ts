@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    `gatsby-plugin-portal`,
   ],
   jsxRuntime: `automatic`,
 };

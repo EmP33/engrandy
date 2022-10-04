@@ -32,10 +32,12 @@
     "babel-plugin-styled-components": "2.0.7",
     "gatsby": "4.24.1",
     "gatsby-omni-font-loader": "2.0.2",
+    "gatsby-plugin-portal": "1.0.7",
     "gatsby-plugin-styled-components": "5.24.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-helmet": "6.1.0",
+    "react-icons": "4.4.0",
     "styled-components": "5.3.6",
     "tsconfig-paths-webpack-plugin": "4.0.0"
   },

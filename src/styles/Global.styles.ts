@@ -2,6 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
+    --color-primary: #1ce783;
+
+    --font-color-1: #333;
+    --font-color-2: #696969;
   }
 
   body {
