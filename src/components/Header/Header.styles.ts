@@ -1,8 +1,16 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.header<{ isScrolled: boolean }>`
   width: 100%;
   z-index: 99;
+  position: ${({ isScrolled }) =>
+    isScrolled ? '-webkit-sticky' : 'static'}; /* Safari */
+  position: ${({ isScrolled }) => (isScrolled ? 'sticky' : 'static')};
+  top: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
 
   .notification-bar {
     border-bottom: 1px solid #eee;
@@ -47,6 +55,8 @@ export const Wrapper = styled.header`
       grid-template-columns: max-content 1fr max-content;
       justify-items: center;
       align-items: center;
+      padding: ${({ isScrolled }) => (isScrolled ? '0.2rem 0.5rem' : '0')};
+      transition: all 0.2s linear;
 
       @media only screen and (max-width: 1200px) {
         grid-template-columns: max-content 1fr repeat(2, max-content);

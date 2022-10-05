@@ -7,10 +7,12 @@ import { graphql } from 'gatsby';
 
 const Home = () => {
   return (
-    <Layout>
-      <HeroSection />
-      <Whywe />
-    </Layout>
+    <>
+      <Layout>
+        <HeroSection />
+        <Whywe />
+      </Layout>
+    </>
   );
 };
 

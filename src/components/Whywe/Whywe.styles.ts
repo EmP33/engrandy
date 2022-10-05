@@ -59,6 +59,9 @@ export const Wrapper = styled.article`
       @media only screen and (max-width: 900px) {
         font-size: 3.5rem;
       }
+      @media only screen and (max-width: 600px) {
+        font-size: 3rem;
+      }
 
       &::after {
         content: '';

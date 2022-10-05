@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 // Components
 import PrimaryButton from '../Utils/PrimaryButton';
@@ -14,13 +14,22 @@ const Header = () => {
   const { languages, originalPath } = useI18next();
   const { t } = useTranslation();
   const [showDrawer, setShowDrawer] = useState(false);
+  const [userScroll, setUserScroll] = useState(0);
 
   const toggleDrawer = () => {
     setShowDrawer((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', () => {
+        setUserScroll(window.scrollY);
+      });
+    }
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper isScrolled={userScroll >= 300}>
       <div className="notification-bar">
         <div className="notification-bar__container">
           {t('The website cost starts from $25')}{' '}
