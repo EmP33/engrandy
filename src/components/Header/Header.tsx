@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'gatsby';
+import { useState } from 'react';
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 // Components
 import PrimaryButton from '../Utils/PrimaryButton';
 import Drawer from '../Drawer/Drawer';
@@ -10,6 +10,9 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { BiChevronDown } from 'react-icons/bi';
 
 const Header = () => {
+  const url = typeof window !== 'undefined' ? window.location.pathname : '';
+  const { languages, originalPath } = useI18next();
+  const { t } = useTranslation();
   const [showDrawer, setShowDrawer] = useState(false);
 
   const toggleDrawer = () => {
@@ -20,7 +23,8 @@ const Header = () => {
     <Wrapper>
       <div className="notification-bar">
         <div className="notification-bar__container">
-          Strona już od 120 złotych! <Link to="">Sprawdź ofertę</Link>
+          {t('The website cost starts from $25')}{' '}
+          <Link to="">{t('Check the offer')}</Link>
         </div>
       </div>
       <div className="appbar">
@@ -30,43 +34,48 @@ const Header = () => {
             <ul>
               <li>
                 <Link to="#">
-                  O nas <BiChevronDown />
+                  {t('About us')} <BiChevronDown />
                 </Link>
                 <div className="dropdown">
                   <div className="dropdown__content">
                     <Link to="">
-                      <span>O nas</span>
+                      <span>{t('About us')}</span>
                     </Link>
                     <Link to="">
-                      <span>Jak pracujemy</span>
+                      <span>{t('How we work')}</span>
                     </Link>
                     <Link to="">
-                      <span>Nasze wartości</span>
+                      <span>{t('Our values')}</span>
                     </Link>
                   </div>
                 </div>
               </li>
               <li>
                 <Link to="#">
-                  Usługi <BiChevronDown />
+                  {t('Services')} <BiChevronDown />
                 </Link>
                 <div className="dropdown">
                   <div className="dropdown__content">
                     <Link to="">
-                      <span>Tworzenie aplikacji webowych</span>
-                      <span>Aplikacje webowe oparte na React lub Gatsby</span>
-                    </Link>
-                    <Link to="">
-                      <span>Tworzenie stron typu SPA</span>
+                      <span>{t('Creating web applications')}</span>
                       <span>
-                        Strony oparte na najnowszych technologiach, które
-                        zagwarantują szybkość i dobre pozycjonowanie
+                        {t('Web applications based on React or Gatsby')}
                       </span>
                     </Link>
                     <Link to="">
-                      <span>Tworzenie stron portfolio</span>
+                      <span>{t('Creating SPA websites')}</span>
                       <span>
-                        Stworzymy profesjonalną stronę idealną pod Ciebie
+                        {t(
+                          'Pages based on the latest technologies that guarantee speed and good positioning',
+                        )}
+                      </span>
+                    </Link>
+                    <Link to="">
+                      <span>{t('Creating portfolio pages')}</span>
+                      <span>
+                        {t(
+                          'We will create a professional website perfect for you',
+                        )}
                       </span>
                     </Link>
                   </div>
@@ -76,29 +85,28 @@ const Header = () => {
                 <Link to="/">Portfolio</Link>
               </li>
               <li>
-                <Link to="/">Kreator</Link>
+                <Link to="/">{t('Builder')}</Link>
               </li>
               <li>
-                <Link to="/">Kontakt</Link>
+                <Link to="/">{t('Contact')}</Link>
               </li>
               <li>
                 <Link to="#">
-                  PL <BiChevronDown />
+                  {url.includes('pl') ? 'PL' : 'EN'} <BiChevronDown />
                 </Link>{' '}
                 <div className="dropdown">
                   <div className="dropdown__content">
-                    <Link to="">
-                      <span>PL</span>
-                    </Link>
-                    <Link to="">
-                      <span>ENG</span>
-                    </Link>
+                    {languages.map((lng) => (
+                      <Link key={lng} to={originalPath} language={lng}>
+                        <span>{lng.toUpperCase()}</span>
+                      </Link>
+                    ))}
                   </div>
                 </div>
               </li>
             </ul>
           </nav>
-          <PrimaryButton text="Sprawdź cenę" />
+          <PrimaryButton text={t('Check the price')} />
           <GiHamburgerMenu onClick={toggleDrawer} />
         </div>
       </div>

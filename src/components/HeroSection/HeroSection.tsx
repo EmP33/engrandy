@@ -1,27 +1,33 @@
 import Map from '@/assets/Map';
-import PrimaryButton from '../Utils/PrimaryButton';
-import OutlineButton from '../Utils/OutlineButton';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 // Styles
 import { Wrapper } from './HeroSection.styles';
 import Hero from '@/assets/Hero';
+// Components
+import PrimaryButton from '../Utils/PrimaryButton';
+import OutlineButton from '../Utils/OutlineButton';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <div className="hero-content">
         <div className="hero-content__heading">
           <span>Engrandy</span>
           <h1>
-            Stwórz <span>profesjonalną stronę internetową</span> w promocyjnej
-            cenie
+            {t('Create')} <span>{t('professional website')}</span>{' '}
+            {t('at a promotional price')}
           </h1>
           <h2>
-            Sprawdź nasz kreator, aby dowiedzieć się wszystkiego o kosztach
-            wykonania twojego projektu
+            {t(
+              'Check out our builder to find out all about the cost of your project',
+            )}
           </h2>
           <div className="heading-actions">
-            <PrimaryButton text="Skontaktuj się z nami" />
-            <OutlineButton text="Przejdź do kreatora" />
+            <PrimaryButton text={t('Contact us')} />
+            <OutlineButton text={t('Go to the builder')} />
           </div>
         </div>
         <div className="hero-content__image">

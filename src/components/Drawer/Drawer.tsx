@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { Wrapper, Backdrop } from './Drawer.styles';
-import { Link } from 'gatsby';
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 // Icons
 import { IoCloseSharp } from 'react-icons/io5';
 import { FiChevronDown } from 'react-icons/fi';
@@ -15,6 +15,9 @@ const portalRoot =
   typeof document !== `undefined` ? document.getElementById('portal') : null;
 
 const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
+  const url = typeof window !== 'undefined' ? window.location.pathname : '';
+  const { t } = useTranslation();
+  const { languages, originalPath } = useI18next();
   const [showDetails, setShowDetails] = useState<{
     show: boolean;
     number: number | null;
@@ -41,7 +44,7 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
                   <ul>
                     <li>
                       <Link to="" onClick={() => handleShowDetails(1)}>
-                        O nas <FiChevronDown />
+                        {t('About us')} <FiChevronDown />
                       </Link>
                       <div
                         className={
@@ -52,20 +55,20 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
                       >
                         <div className="dropdown__content">
                           <Link to="">
-                            <span>O nas</span>
+                            <span>{t('About us')}</span>
                           </Link>
                           <Link to="">
-                            <span>Jak pracujemy</span>
+                            <span>{t('How we work')}</span>
                           </Link>
                           <Link to="">
-                            <span>Nasze wartości</span>
+                            <span>{t('Our values')}</span>
                           </Link>
                         </div>
                       </div>
                     </li>
                     <li>
                       <Link to="" onClick={() => handleShowDetails(2)}>
-                        Usługi <FiChevronDown />
+                        {t('Services')} <FiChevronDown />
                       </Link>
                       <div
                         className={
@@ -76,22 +79,25 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
                       >
                         <div className="dropdown__content">
                           <Link to="">
-                            <span>Tworzenie aplikacji webowych</span>
+                            <span>{t('Creating web applications')}</span>
                             <span>
-                              Aplikacje webowe oparte na React lub Gatsby
+                              {t('Web applications based on React or Gatsby')}
                             </span>
                           </Link>
                           <Link to="">
-                            <span>Tworzenie stron typu SPA</span>
+                            <span> {t('Creating SPA websites')}</span>
                             <span>
-                              Strony oparte na najnowszych technologiach, które
-                              zagwarantują szybkość i dobre pozycjonowanie
+                              {t(
+                                'Pages based on the latest technologies that guarantee speed and good positioning',
+                              )}
                             </span>
                           </Link>
                           <Link to="">
-                            <span>Tworzenie stron portfolio</span>
+                            <span>{t('Creating portfolio pages')}</span>
                             <span>
-                              Stworzymy profesjonalną stronę idealną pod Ciebie
+                              {t(
+                                'We will create a professional website perfect for you',
+                              )}
                             </span>
                           </Link>
                         </div>
@@ -101,14 +107,14 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
                       <Link to="">Portfolio</Link>
                     </li>
                     <li>
-                      <Link to="">Kreator</Link>
+                      <Link to="">{t('Builder')}</Link>
                     </li>
                     <li>
-                      <Link to="">Kontakt</Link>
+                      <Link to="">{t('Contact')}</Link>
                     </li>
                     <li>
                       <Link to="" onClick={() => handleShowDetails(3)}>
-                        PL <FiChevronDown />
+                        {url.includes('pl') ? 'PL' : 'EN'} <FiChevronDown />
                       </Link>
                       <div
                         className={
@@ -118,12 +124,11 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
                         }
                       >
                         <div className="dropdown__content">
-                          <Link to="">
-                            <span>PL</span>
-                          </Link>
-                          <Link to="">
-                            <span>ENG</span>
-                          </Link>
+                          {languages.map((lng) => (
+                            <Link key={lng} to={originalPath} language={lng}>
+                              <span>{lng.toUpperCase()}</span>
+                            </Link>
+                          ))}
                         </div>
                       </div>
                     </li>
