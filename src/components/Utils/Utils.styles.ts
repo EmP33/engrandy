@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PrimaryButtonStyle = styled.button`
   background-color: var(--color-primary);
   padding: 1rem 1rem;
-  color: var(--font-color-1);
+  color: var(--color-secondary);
   font-size: 0.9rem;
   font-weight: 600;
   border: 0;
@@ -28,7 +28,7 @@ export const PrimaryButtonStyle = styled.button`
 export const OutlineButtonStyle = styled.button`
   background: transparent;
   padding: 1rem 1rem;
-  color: var(--font-color-1);
+  color: var(--color-secondary);
   font-size: 0.9rem;
   font-weight: 600;
   border: 0;

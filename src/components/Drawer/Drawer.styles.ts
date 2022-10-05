@@ -11,6 +11,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
   z-index: 99;
   transition: all 0.15s linear;
   padding: ${({ showDrawer }) => (showDrawer ? '1.5rem 2rem;' : 0)};
+  overflow: hidden;
 
   @media screen and (max-width: 400px) {
     width: ${({ showDrawer }) => (showDrawer ? '100%' : 0)};
@@ -23,7 +24,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
     justify-content: space-between;
     a {
       font-size: 1.125rem;
-      color: var(--font-color-1);
+      color: var(--color-secondary);
       text-decoration: none;
     }
     svg {
@@ -49,7 +50,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
         width: 100%;
         display: flex;
         padding: 1rem 0;
-        color: var(--font-color-1);
+        color: var(--color-secondary);
         text-decoration: none;
         font-weight: 500;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
@@ -87,7 +88,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
           & > a {
             font-size: 1rem;
             text-decoration: none;
-            color: var(--font-color-1);
+            color: var(--color-secondary);
             font-weight: 600;
             max-width: 100%;
 
@@ -96,7 +97,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
 
               &:nth-of-type(2) {
                 font-weight: 400;
-                color: #3d3d3d;
+                color: var(--color-secondary);
                 font-size: 0.8rem;
               }
             }
@@ -109,7 +110,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
                 &:nth-of-type(2) {
                   text-decoration: none;
                   font-weight: 400;
-                  color: #3d3d3d;
+                  color: var(--color-secondary);
                 }
               }
             }
@@ -129,4 +130,5 @@ export const Backdrop = styled.div<{ showDrawer: boolean }>`
   top: 0;
   z-index: 98;
   display: ${({ showDrawer }) => (showDrawer ? 'block' : 'none')};
+  overflow: hidden;
 `;

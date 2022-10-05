@@ -1,6 +1,6 @@
 import Map from '@/assets/Map';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Link, Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 // Styles
 import { Wrapper } from './HeroSection.styles';
 import Hero from '@/assets/Hero';
