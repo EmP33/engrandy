@@ -79,24 +79,127 @@ export const Wrapper = styled.header`
       & ul {
         display: flex;
         list-style: none;
-        column-gap: 3.5rem;
+        column-gap: 3rem;
 
         @media only screen and (max-width: 1200px) {
           display: none;
         }
 
-        & a {
-          display: block;
+        & .dropdown {
+          visibility: hidden;
+          position: absolute;
+          background: #fff;
+          -webkit-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.15);
+          -moz-box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.15);
+          min-width: 15rem;
+          transform: translateY(25px);
+          transition: all 0.05s linear;
+
+          &:hover {
+            visibility: visible;
+            transform: translateY(0);
+          }
+
+          &__content {
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+            padding: 2rem;
+            display: grid;
+            row-gap: 1rem;
+
+            &::before {
+              content: '';
+              position: absolute;
+              z-index: -2;
+              left: -50%;
+              top: -50%;
+              width: 200%;
+              height: 200%;
+              background-color: transparent;
+              background-repeat: no-repeat;
+              background-size: 50% 50%, 50% 50%;
+              background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+              background-image: linear-gradient(
+                  var(--color-primary),
+                  var(--color-primary)
+                ),
+                linear-gradient(transparent, transparent),
+                linear-gradient(transparent, transparent),
+                linear-gradient(transparent, transparent);
+              animation: rotate 4s linear infinite;
+            }
+
+            &::after {
+              content: '';
+              position: absolute;
+              z-index: -1;
+              left: 6px;
+              top: 6px;
+              width: calc(100% - 12px);
+              height: calc(100% - 12px);
+              background: white;
+            }
+
+            @keyframes rotate {
+              100% {
+                transform: rotate(1turn);
+              }
+            }
+
+            & > a {
+              font-size: 0.85rem;
+              text-decoration: none;
+              color: var(--font-color-1);
+              font-weight: 600;
+              max-width: 70%;
+
+              & span {
+                display: block;
+
+                &:nth-of-type(2) {
+                  font-weight: 400;
+                  color: var(--font-color-2);
+                  font-size: 0.8rem;
+                }
+              }
+
+              &:hover {
+                & span {
+                  color: #000;
+                  text-decoration: underline;
+
+                  &:nth-of-type(2) {
+                    text-decoration: none;
+                    font-weight: 400;
+                    color: var(--font-color-2);
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        & li > a {
+          display: flex;
           color: var(--font-color-1);
           text-decoration: none;
           font-weight: 500;
           padding: 1.5rem 0.25rem;
           position: relative;
+          align-items: center;
 
           &:hover {
             color: var(--color-primary);
             &::after {
               width: 100%;
+            }
+            & ~ .dropdown {
+              visibility: visible;
+              transform: translateY(0);
+              transition: all 0.15s linear;
+              transition-delay: 0.3s;
             }
           }
 
@@ -119,7 +222,7 @@ export const Wrapper = styled.header`
         }
       }
 
-      & svg {
+      & > svg {
         font-size: 2rem;
         color: #333;
         cursor: pointer;
