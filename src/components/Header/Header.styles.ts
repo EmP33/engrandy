@@ -2,9 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.header`
   width: 100%;
-  -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  z-index: 99;
 
   .notification-bar {
     border-bottom: 1px solid #eee;
@@ -95,6 +93,7 @@ export const Wrapper = styled.header`
           min-width: 15rem;
           transform: translateY(25px);
           transition: all 0.05s linear;
+          z-index: 9;
 
           &:hover {
             visibility: visible;

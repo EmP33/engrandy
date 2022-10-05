@@ -8,6 +8,7 @@ export const Wrapper = styled.div<{ showDrawer: boolean }>`
   position: fixed;
   top: 0;
   right: 0;
+  z-index: 99;
   transition: all 0.15s linear;
   padding: ${({ showDrawer }) => (showDrawer ? '1.5rem 2rem;' : 0)};
 
@@ -126,5 +127,6 @@ export const Backdrop = styled.div<{ showDrawer: boolean }>`
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 98;
   display: ${({ showDrawer }) => (showDrawer ? 'block' : 'none')};
 `;
