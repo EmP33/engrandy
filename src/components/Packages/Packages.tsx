@@ -1,140 +1,142 @@
 import PrimaryButton from '../Utils/PrimaryButton';
-import { Link } from 'gatsby-plugin-react-i18next';
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Packages.styles';
 import { BsCheck } from 'react-icons/bs';
 
 const Packages = () => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
-      <h2>Wybierz jeden z podstawowych pakietów dla siebie</h2>
+      <h2>{t('Choose one of the basic packages for yourself')}</h2>
       <div className="packages">
         <div className="packages__package">
-          <h3>Strona Internetowa</h3>
+          <h3>{t('Web page')}</h3>
           <ul>
             <li>
               <BsCheck />
-              <span>Profesjonalna strona internetowa</span>
+              <span>{t('Professional website')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Dostosowanie do wersji na telefon (RWD)</span>
+              <span>{t('Adaptation to the phone version (RWD)')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Kopie zapasową</span>
+              <span>{t('Backup')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Pomoc techniczna na 1 rok</span>
+              <span>{t('Technical support for 1 year')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Zdjęcia i ikonki z licencją</span>
+              <span>{t('Photos and icons with license')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Konfiguracja formularza kontaktowego</span>
+              <span>{t('Configuration of the contact form')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Polityka prywatności</span>
+              <span>{t('Privacy policy')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>1 strona</span>
+              <span>1 {t('Page')}</span>
             </li>
           </ul>
           <div className="package__action">
-            <h4>450 netto</h4>
-            <PrimaryButton text="Zamów teraz" />
+            <h4>{t('$90')}</h4>
+            <PrimaryButton text={t('Order now')} />
           </div>
         </div>
         <div className="packages__package">
-          <h3>Strona Internetowa</h3>
+          <h3>{t('Web page')}</h3>
           <ul>
             <li>
               <BsCheck />
-              <span>Profesjonalna strona internetowa</span>
+              <span>{t('Professional website')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Dostosowanie do wersji na telefon (RWD)</span>
+              <span>{t('Adaptation to the phone version (RWD)')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Kopie zapasową</span>
+              <span>{t('Backup')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Pomoc techniczna na 1 rok</span>
+              <span>{t('Technical support for 1 year')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Zdjęcia i ikonki z licencją</span>
+              <span>{t('Photos and icons with license')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Konfiguracja formularza kontaktowego</span>
+              <span>{t('Configuration of the contact form')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Polityka prywatności</span>
+              <span>{t('Privacy policy')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>3 strony</span>
+              <span>3 {t('Pages')}</span>
             </li>
           </ul>
           <div className="package__action">
-            <h4>750 netto</h4>
-            <PrimaryButton text="Zamów teraz" />
+            <h4>{t('$150')}</h4>
+            <PrimaryButton text={t('Order now')} />
           </div>
         </div>
         <div className="packages__package">
-          <h3>Strona Internetowa</h3>
+          <h3>{t('Web page')}</h3>
           <ul>
             <li>
               <BsCheck />
-              <span>Profesjonalna strona internetowa</span>
+              <span>{t('Professional website')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Dostosowanie do wersji na telefon (RWD)</span>
+              <span>{t('Adaptation to the phone version (RWD)')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Kopie zapasową</span>
+              <span>{t('Backup')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Pomoc techniczna na 1 rok</span>
+              <span>{t('Technical support for 1 year')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Zdjęcia i ikonki z licencją</span>
+              <span>{t('Photos and icons with license')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Konfiguracja formularza kontaktowego</span>
+              <span>{t('Configuration of the contact form')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>Polityka prywatności</span>
+              <span>{t('Privacy policy')}</span>
             </li>
             <li>
               <BsCheck />
-              <span>5 stron</span>
+              <span>5 {t('Pages2')}</span>
             </li>
           </ul>
           <div className="package__action">
-            <h4>1150 netto</h4>
-            <PrimaryButton text="Zamów teraz" />
+            <h4>{t('$230')}</h4>
+            <PrimaryButton text={t('Order now')} />
           </div>
         </div>
       </div>
       <span>
-        Po wybraniu pakietu zostaniesz przekierowany do{' '}
-        <Link to="/builder">kreatora zamówienia</Link> .
+        {t('After selecting the package, you will be redirected to')}{' '}
+        <Link to="/builder">{t('The order builder')}</Link> .
       </span>
     </Wrapper>
   );

@@ -3,11 +3,12 @@ import { PrimaryButtonStyle } from './Utils.styles';
 
 interface IProps {
   text: string;
+  dark?: boolean;
 }
 
-const PrimaryButton: React.FC<IProps> = ({ text }) => {
+const PrimaryButton: React.FC<IProps> = ({ text, dark }) => {
   return (
-    <PrimaryButtonStyle>
+    <PrimaryButtonStyle dark={dark}>
       <div>
         <div>
           <span>{text}</span>

@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export const PrimaryButtonStyle = styled.button`
-  background-color: var(--color-primary);
+export const PrimaryButtonStyle = styled.button<{ dark: boolean }>`
+  background-color: ${({ dark }) =>
+    dark ? 'var(--color-secondary)' : 'var(--color-primary)'};
   padding: 1rem 1rem;
-  color: var(--color-secondary);
+  color: ${({ dark }) =>
+    dark ? 'var(--color-primary)' : 'var(--color-secondary)'};
   font-size: 0.9rem;
   font-weight: 600;
   border: 0;
