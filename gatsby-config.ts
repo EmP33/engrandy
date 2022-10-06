@@ -24,7 +24,13 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    `gatsby-plugin-portal`,
+    {
+      resolve: `gatsby-plugin-portal`,
+      options: {
+        key: 'portal',
+        id: 'portal',
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,6 +72,12 @@ const config: GatsbyConfig = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en',
+      },
+    },
   ],
   jsxRuntime: `automatic`,
 };

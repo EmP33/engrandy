@@ -55,7 +55,7 @@ export const Wrapper = styled.header<{ isScrolled: boolean }>`
       grid-template-columns: max-content 1fr max-content;
       justify-items: center;
       align-items: center;
-      padding: ${({ isScrolled }) => (isScrolled ? '0.2rem 0.5rem' : '0')};
+      padding: ${({ isScrolled }) => (isScrolled ? '0 0.5rem' : '0')};
       transition: all 0.2s linear;
 
       @media only screen and (max-width: 1200px) {

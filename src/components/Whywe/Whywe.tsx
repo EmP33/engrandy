@@ -1,5 +1,6 @@
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import Blob from '@/assets/Blob';
+import Technologies from '@/assets/Technologies';
 // Styles
 import { Wrapper } from './Whywe.styles';
 // Icons
@@ -73,6 +74,9 @@ const Whywe = () => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="technologies-wrapper">
+        <Technologies />
       </div>
     </Wrapper>
   );

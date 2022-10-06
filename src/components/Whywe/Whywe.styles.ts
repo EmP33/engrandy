@@ -5,7 +5,7 @@ export const Wrapper = styled.article`
   min-height: 100vh;
   background: var(--color-secondary);
   position: relative;
-  padding: 5rem 0;
+  padding: 5rem 0 0 0;
   overflow: hidden;
 
   & > svg {
@@ -14,14 +14,15 @@ export const Wrapper = styled.article`
     z-index: 0;
     transform: translateX(-80%);
     border-radius: 50%;
+
     &:nth-of-type(1) {
       left: 80%;
       transform: translateX(-80%);
     }
     &:nth-of-type(2) {
       left: 10%;
-      bottom: 0;
-      transform: translateX(-10%);
+      bottom: 30%;
+      transform: translate(-10%, -30%);
     }
 
     @media only screen and (max-width: 600px) {
@@ -134,6 +135,41 @@ export const Wrapper = styled.article`
           transform: translateY(-15px);
         }
       }
+    }
+  }
+  .technologies-wrapper {
+    width: 1600px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(20%);
+
+    &::before {
+      content: '';
+      width: 100px;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: var(--color-secondary);
+      background: linear-gradient(
+        90deg,
+        var(--color-secondary) 0%,
+        transparent 100%
+      );
+    }
+    &::after {
+      content: '';
+      width: 100px;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background: var(--color-secondary);
+      background: linear-gradient(
+        -90deg,
+        var(--color-secondary) 0%,
+        transparent 100%
+      );
     }
   }
 `;

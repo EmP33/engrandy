@@ -56,7 +56,7 @@ export const Wrapper = styled.section`
         font-size: 2.5rem;
 
         & span {
-          color: var(--color-primary);
+          color: var(--color-primary-dark);
         }
       }
       & h2 {
@@ -90,7 +90,7 @@ export const Wrapper = styled.section`
     bottom: 0;
     object-fit: contain;
     width: 100%;
-    opacity: 0.5;
+    opacity: 0.6;
     z-index: -1;
   }
 `;

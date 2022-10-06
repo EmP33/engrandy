@@ -1,5 +1,6 @@
 import HeroSection from '@/components/HeroSection/HeroSection';
 import Layout from '@/components/layout';
+import Process from '@/components/Process/Process';
 import Seo from '@/components/seo';
 import Whywe from '@/components/Whywe/Whywe';
 
@@ -11,6 +12,7 @@ const Home = () => {
       <Layout>
         <HeroSection />
         <Whywe />
+        <Process />
       </Layout>
     </>
   );
