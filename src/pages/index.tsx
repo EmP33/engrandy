@@ -1,5 +1,6 @@
 import HeroSection from '@/components/HeroSection/HeroSection';
 import Layout from '@/components/layout';
+import Notification from '@/components/Notification/Notification';
 import Packages from '@/components/Packages/Packages';
 import Process from '@/components/Process/Process';
 import Seo from '@/components/seo';
@@ -15,6 +16,7 @@ const Home = () => {
         <Whywe />
         <Process />
         <Packages />
+        <Notification />
       </Layout>
     </>
   );

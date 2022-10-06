@@ -17,7 +17,7 @@ const Process = () => {
             <h3>{t('You order and pay for the service')}</h3>
             <p>
               {t(
-                'To order the service, you can do it on this page using the available packages or use the order wizard. You can also use websites offering such services by finding our offer there',
+                'To order the service, you can do it on this page using the available packages or use the order builder. You can also use websites offering such services by finding our offer there',
               )}
             </p>
           </div>
