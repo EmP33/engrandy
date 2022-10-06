@@ -123,16 +123,20 @@ export const Wrapper = styled.article`
           color: var(--color-primary);
 
           &:hover {
-            background: var(--color-primary);
-            color: var(--color-secondary);
-            transform: translateY(-15px);
+            @media only screen and (min-width: 800px) {
+              background: var(--color-primary);
+              color: var(--color-secondary);
+              transform: translateY(-15px);
+            }
           }
         }
 
         &:hover {
-          background: var(--color-secondary);
-          color: var(--color-primary);
-          transform: translateY(-15px);
+          @media only screen and (min-width: 800px) {
+            background: var(--color-secondary);
+            color: var(--color-primary);
+            transform: translateY(-15px);
+          }
         }
       }
     }

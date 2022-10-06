@@ -66,7 +66,7 @@ export const Wrapper = styled.section`
 
         & svg {
           font-size: 7rem;
-          color: var(--color-secondary);
+          color: var(--color-primary-dark);
           grid-row: span 2;
 
           @media only screen and (max-width: 600px) {

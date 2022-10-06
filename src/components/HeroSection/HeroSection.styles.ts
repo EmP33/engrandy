@@ -88,9 +88,12 @@ export const Wrapper = styled.section`
   & > svg {
     position: absolute;
     bottom: 0;
-    object-fit: contain;
     width: 100%;
     opacity: 0.6;
     z-index: -1;
+
+    @media only screen and (max-width: 600px) {
+      width: auto;
+    }
   }
 `;
