@@ -1,43 +1,44 @@
 import { Link } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Footer.styles';
-
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { FaFacebookF } from 'react-icons/fa';
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <span>Engrandy</span>
       <div className="footer-blocks">
         <div className="footer-blocks__block">
-          <h3>About us</h3>
+          <h3>{t('About us')}</h3>
           <ul>
             <Link to="/">
-              <li>About us</li>
+              <li>{t('About us')}</li>
             </Link>
             <Link to="/">
-              <li>How we work</li>
+              <li>{t('How we work')}</li>
             </Link>
             <Link to="/">
-              <li>Our values</li>
+              <li>{t('Our values')}</li>
             </Link>
           </ul>
         </div>
         <div className="footer-blocks__block">
-          <h3>Services</h3>
+          <h3>{t('Services')}</h3>
           <ul>
             <Link to="/">
-              <li>Creating web applications</li>
+              <li>{t('Creating web applications')}</li>
             </Link>
             <Link to="/">
-              <li>Creating SPA websites</li>
+              <li>{t('Creating SPA websites')}</li>
             </Link>
             <Link to="/">
-              <li>Creating portfolio pages</li>
+              <li>{t('Creating portfolio pages')}</li>
             </Link>
           </ul>
         </div>
         <div className="footer-blocks__block">
-          <h3>Language</h3>
+          <h3>{t('Language')}</h3>
           <ul>
             <Link to="/">
               <li>EN</li>
