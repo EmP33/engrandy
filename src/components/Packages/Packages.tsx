@@ -8,9 +8,11 @@ const Packages = () => {
 
   return (
     <Wrapper>
-      <h2>{t('Choose one of the basic packages for yourself')}</h2>
+      <h2 data-aos="fade-up">
+        {t('Choose one of the basic packages for yourself')}
+      </h2>
       <div className="packages">
-        <div className="packages__package">
+        <div className="packages__package" data-aos="fade-right">
           <h3>{t('Web page')}</h3>
           <ul>
             <li>
@@ -51,7 +53,7 @@ const Packages = () => {
             <PrimaryButton text={t('Order now')} />
           </div>
         </div>
-        <div className="packages__package">
+        <div className="packages__package" data-aos="fade-up">
           <h3>{t('Web page')}</h3>
           <ul>
             <li>
@@ -92,7 +94,7 @@ const Packages = () => {
             <PrimaryButton text={t('Order now')} />
           </div>
         </div>
-        <div className="packages__package">
+        <div className="packages__package" data-aos="fade-left">
           <h3>{t('Web page')}</h3>
           <ul>
             <li>

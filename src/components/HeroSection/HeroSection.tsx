@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <Wrapper>
       <div className="hero-content">
-        <div className="hero-content__heading">
+        <div className="hero-content__heading" data-aos="fade-up">
           <span>Engrandy</span>
           <h1>
             {t('Create')} <span>{t('professional website')}</span>{' '}

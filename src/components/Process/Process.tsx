@@ -12,7 +12,11 @@ const Process = () => {
       <div className="content-wrapper">
         <h2>{t('What does the process of creating a website look like')}</h2>
         <div className="process-steps">
-          <div className="process-steps__step" data-number={1}>
+          <div
+            className="process-steps__step"
+            data-number={1}
+            data-aos="fade-up"
+          >
             <MdPayments />
             <h3>{t('You order and pay for the service')}</h3>
             <p>
@@ -21,7 +25,11 @@ const Process = () => {
               )}
             </p>
           </div>
-          <div className="process-steps__step" data-number={2}>
+          <div
+            className="process-steps__step"
+            data-number={2}
+            data-aos="fade-up"
+          >
             <TbWriting />
             <h3>{t('Information gathering')}</h3>
             <p>
@@ -30,7 +38,11 @@ const Process = () => {
               )}
             </p>
           </div>
-          <div className="process-steps__step" data-number={3}>
+          <div
+            className="process-steps__step"
+            data-number={3}
+            data-aos="fade-up"
+          >
             <RiSlideshowLine />
             <h3>{t('Delivery of the order')}</h3>
             <p>

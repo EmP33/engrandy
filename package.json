@@ -29,6 +29,7 @@
     ]
   },
   "dependencies": {
+    "aos": "2.3.4",
     "babel-plugin-styled-components": "2.0.7",
     "gatsby": "4.24.1",
     "gatsby-omni-font-loader": "2.0.2",
@@ -58,6 +59,7 @@
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
     "@testing-library/react-hooks": "8.0.1",
+    "@types/aos": "3.0.4",
     "@types/jest": "29.1.1",
     "@types/node": "16.11.62",
     "@types/react": "18.0.21",

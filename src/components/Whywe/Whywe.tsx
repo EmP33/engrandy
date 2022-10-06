@@ -17,9 +17,9 @@ const Whywe = () => {
       <Blob />
       <Blob />
       <div className="content-wrapper">
-        <h2>{t('Why Engrandy')}</h2>
+        <h2 data-aos="fade-up">{t('Why Engrandy')}</h2>
         <div className="content-blocks">
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <RiTimerFlashFill />
             <h3>{t('Page speed')}</h3>
             <p>
@@ -28,7 +28,7 @@ const Whywe = () => {
               )}
             </p>
           </div>
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <RiBillFill />
             <h3>{t('Order transparency')}</h3>
             <p>
@@ -37,7 +37,7 @@ const Whywe = () => {
               )}
             </p>
           </div>
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <MdOutlineStackedLineChart />
             <h3>{t('The positioning of the page')}</h3>
             <p>
@@ -46,7 +46,7 @@ const Whywe = () => {
               )}
             </p>
           </div>
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <ImPriceTag />
             <h3>{t('Price to quality')}</h3>
             <p>
@@ -55,7 +55,7 @@ const Whywe = () => {
               )}
             </p>
           </div>
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <GiTrophyCup />
             <h3>{t('Uniqueness')}</h3>
             <p>
@@ -64,7 +64,7 @@ const Whywe = () => {
               )}
             </p>
           </div>
-          <div className="content-blocks__block">
+          <div className="content-blocks__block" data-aos="fade-up">
             <IoHelp />
             <h3>{t('Support')}</h3>
             <p>

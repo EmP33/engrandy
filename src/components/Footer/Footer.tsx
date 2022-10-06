@@ -1,9 +1,16 @@
-import { Link } from 'gatsby-plugin-react-i18next';
+import { useEffect } from 'react';
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Footer.styles';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+
 import { FaFacebookF } from 'react-icons/fa';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Footer = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   const { t } = useTranslation();
   return (
     <Wrapper>
