@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Footer.styles';
 
 import { FaFacebookF } from 'react-icons/fa';
@@ -12,6 +12,7 @@ const Footer = () => {
     AOS.init();
   }, []);
   const { t } = useTranslation();
+  const { languages, originalPath } = useI18next();
   return (
     <Wrapper>
       <span>Engrandy</span>
@@ -47,12 +48,11 @@ const Footer = () => {
         <div className="footer-blocks__block">
           <h3>{t('Language')}</h3>
           <ul>
-            <Link to="/">
-              <li>EN</li>
-            </Link>
-            <Link to="/">
-              <li>PL</li>
-            </Link>
+            {languages.map((lng) => (
+              <Link key={lng} to={originalPath} language={lng}>
+                <li>{lng.toUpperCase()}</li>
+              </Link>
+            ))}
           </ul>
         </div>
       </div>

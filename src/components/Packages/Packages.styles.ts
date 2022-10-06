@@ -6,9 +6,10 @@ export const Wrapper = styled.section`
   background-color: var(--color-tertiary);
   position: relative;
   padding: 5rem 0;
+  overflow: hidden;
 
   @media only screen and (max-width: 600px) {
-    padding: 4rem 0;
+    padding: 4rem 0.5rem;
   }
 
   & h2 {
