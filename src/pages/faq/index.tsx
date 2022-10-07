@@ -1,5 +1,5 @@
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout/layout';
 import PageHeading from '@/components/PageHeading/PageHeading';
 import QuestionBlock from '@/components/QuestionBlock/QuestionBlock';
 import Seo from '@/components/seo';

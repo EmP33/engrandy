@@ -1,6 +1,6 @@
 import AboutImage from '@/assets/AboutImage';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout/layout';
 import MoreAboutus from '@/components/MoreAboutus/MoreAboutus';
 import PageHeading from '@/components/PageHeading/PageHeading';
 import Seo from '@/components/seo';

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 // Components
-import PrimaryButton from '../Utils/PrimaryButton';
+import PrimaryButton from '../../Utils/PrimaryButton';
 import Drawer from '../Drawer/Drawer';
 // Styles
 import { Wrapper } from './Header.styles';
@@ -94,10 +94,10 @@ const Header = () => {
                 <Link to="/">Portfolio</Link>
               </li>
               <li>
-                <Link to="/">{t('Builder')}</Link>
+                <Link to="/builder/">{t('Builder')}</Link>
               </li>
               <li>
-                <Link to="/">{t('Contact')}</Link>
+                <Link to="/contact/">{t('Contact')}</Link>
               </li>
               <li>
                 <Link to="#">

@@ -1,4 +1,4 @@
-import PrimaryButton from '../Utils/PrimaryButton';
+import PrimaryButton from '../../Utils/PrimaryButton';
 import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Packages.styles';
 import { BsCheck } from 'react-icons/bs';
@@ -138,7 +138,7 @@ const Packages = () => {
       </div>
       <span>
         {t('After selecting the package, you will be redirected to')}{' '}
-        <Link to="/builder">{t('The order builder')}</Link> .
+        <Link to="/builder/">{t('The order builder')}</Link> .
       </span>
     </Wrapper>
   );

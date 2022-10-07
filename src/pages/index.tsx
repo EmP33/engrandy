@@ -1,10 +1,10 @@
-import HeroSection from '@/components/HeroSection/HeroSection';
-import Layout from '@/components/layout';
-import Notification from '@/components/Notification/Notification';
-import Packages from '@/components/Packages/Packages';
-import Process from '@/components/Process/Process';
+import HeroSection from '@/components/HomePageComponents/HeroSection/HeroSection';
+import Layout from '@/components/Layout/layout';
+import Notification from '@/components/HomePageComponents/Notification/Notification';
+import Packages from '@/components/HomePageComponents/Packages/Packages';
+import Process from '@/components/HomePageComponents/Process/Process';
 import Seo from '@/components/seo';
-import Whywe from '@/components/Whywe/Whywe';
+import Whywe from '@/components/HomePageComponents/Whywe/Whywe';
 
 import { graphql } from 'gatsby';
 

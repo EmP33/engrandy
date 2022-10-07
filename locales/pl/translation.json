@@ -76,5 +76,14 @@
   "How long will I wait for the project to start?": "Jak długo będę czekać na rozpoczęcie projektu?",
   "In each summary, we can tell you how long it will take to create this website from start to finish, not counting the time to create a visual design and receive information from you.": "W każdym podsumowaniu możemy Ci powiedzieć, ile czasu zajmie stworzenie tej strony od początku do końca, nie licząc czasu na stworzenie projektu wizualnego i otrzymanie od Ciebie informacji.",
   "Which technologies do you use?": "Z jakich technologii korzystasz?",
-  "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase.": "Pracujemy z wykorzystaniem znanych i nowoczesnych technologii takich jak React.JS, Gatsby, Firebase."
+  "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase.": "Pracujemy z wykorzystaniem znanych i nowoczesnych technologii takich jak React.JS, Gatsby, Firebase.",
+  "Do you have additional questions? You can ask them here!": "Masz dodatkowe pytania? Możesz je zadać tutaj!",
+  "First name": "Imię",
+  "Email Address": "Adres Email",
+  "Message": "Wiadomość",
+  "Send": "Wyślij",
+  "Name input cannot be blank.": "Pole imię nie może być puste.",
+  "Enter correct email address.": "Wprowadź poprawny adres email.",
+  "Message field cannot be blank.": "Pole wiadomość nie może być puste.",
+  "Your message has been sent": "Twoja wiadomość została wysłana"
 }

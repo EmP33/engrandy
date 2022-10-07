@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Wrapper } from './QuestionBlock.styles';
 import { BiChevronDown } from 'react-icons/bi';
 import { useTranslation } from 'gatsby-plugin-react-i18next';

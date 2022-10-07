@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-export const PrimaryButtonStyle = styled.button<{ dark: boolean }>`
+export const PrimaryButtonStyle = styled.button<{
+  dark: boolean;
+  type?: string;
+}>`
   background-color: ${({ dark }) =>
     dark ? 'var(--color-secondary)' : 'var(--color-primary)'};
   padding: 1rem 1rem;

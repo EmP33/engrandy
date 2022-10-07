@@ -102,10 +102,10 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
               <Link to="">Portfolio</Link>
             </li>
             <li>
-              <Link to="">{t('Builder')}</Link>
+              <Link to="/builder/">{t('Builder')}</Link>
             </li>
             <li>
-              <Link to="">{t('Contact')}</Link>
+              <Link to="/contact/">{t('Contact')}</Link>
             </li>
             <li>
               <Link to="" onClick={() => handleShowDetails(3)}>

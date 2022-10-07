@@ -76,5 +76,14 @@
   "How long will I wait for the project to start?": "How long will I wait for the project to start?",
   "In each summary, we can tell you how long it will take to create this website from start to finish, not counting the time to create a visual design and receive information from you.": "In each summary, we can tell you how long it will take to create this website from start to finish, not counting the time to create a visual design and receive information from you.",
   "Which technologies do you use?": "Which technologies do you use?",
-  "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase.": "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase."
+  "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase.": "We work with the use of well-known and modern technologies such as React.JS, Gatsby, Firebase.",
+  "Do you have additional questions? You can ask them here!": "Do you have additional questions? You can ask them here!",
+  "First name": "First name",
+  "Email address": "Email address",
+  "Message": "Message",
+  "Send": "Send",
+  "Name input cannot be blank.": "Name input cannot be blank.",
+  "Enter correct email address.": "Enter correct email address.",
+  "Message field cannot be blank.": "Message field cannot be blank.",
+  "Your message has been sent": "Your message has been sent"
 }

@@ -5,8 +5,8 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './HeroSection.styles';
 import Hero from '@/assets/Hero';
 // Components
-import PrimaryButton from '../Utils/PrimaryButton';
-import OutlineButton from '../Utils/OutlineButton';
+import PrimaryButton from '../../Utils/PrimaryButton';
+import OutlineButton from '../../Utils/OutlineButton';
 
 const HeroSection = () => {
   const { t } = useTranslation();
