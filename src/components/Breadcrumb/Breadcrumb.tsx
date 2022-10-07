@@ -1,11 +1,18 @@
+import React from 'react';
 import { BiChevronsRight } from 'react-icons/bi';
 import { Wrapper } from './Breadcrumb.styles';
 import { Link } from 'gatsby-plugin-react-i18next';
 
-const Breadcrumb = () => {
+interface IProps {
+  currentPage: string;
+  previousPage: string;
+  link: string;
+}
+
+const Breadcrumb: React.FC<IProps> = ({ currentPage, previousPage, link }) => {
   return (
     <Wrapper>
-      <Link to="/">Strona główna</Link> <BiChevronsRight /> O nas
+      <Link to={link}>{previousPage}</Link> <BiChevronsRight /> {currentPage}
     </Wrapper>
   );
 };

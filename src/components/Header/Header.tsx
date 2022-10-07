@@ -50,11 +50,11 @@ const Header = () => {
                     <Link to="/about-us/">
                       <span>{t('About us')}</span>
                     </Link>
-                    <Link to="">
-                      <span>{t('How we work')}</span>
-                    </Link>
-                    <Link to="">
+                    <Link to="/our-values/">
                       <span>{t('Our values')}</span>
+                    </Link>
+                    <Link to="/faq/">
+                      <span>FAQ</span>
                     </Link>
                   </div>
                 </div>

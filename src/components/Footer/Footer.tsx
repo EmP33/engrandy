@@ -20,14 +20,14 @@ const Footer = () => {
         <div className="footer-blocks__block">
           <h3>{t('About us')}</h3>
           <ul>
-            <Link to="/">
+            <Link to="/about-us/">
               <li>{t('About us')}</li>
             </Link>
-            <Link to="/">
-              <li>{t('How we work')}</li>
-            </Link>
-            <Link to="/">
+            <Link to="/our-values/">
               <li>{t('Our values')}</li>
+            </Link>
+            <Link to="/faq/">
+              <li>FAQ</li>
             </Link>
           </ul>
         </div>

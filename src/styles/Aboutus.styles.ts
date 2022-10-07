@@ -4,24 +4,28 @@ export const Wrapper = styled.article`
   padding: 0 0 2rem;
   position: relative;
 
-  &::before {
-    content: '';
-    background: rgba(28, 231, 131, 0.15);
-    clip-path: polygon(0 0, 50% 100%, 100% 0);
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 0;
-    width: 80%;
-    height: 100vh;
-    z-index: -1;
+  .hero-section {
+    height: auto;
+    padding-bottom: 3rem;
+    &::before {
+      content: '';
+      background: rgba(28, 231, 131, 0.15);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      width: 80%;
+      height: 95vh;
+      z-index: -1;
 
-    @media only screen and (max-width: 900px) {
-      width: 90%;
-    }
+      @media only screen and (max-width: 900px) {
+        width: 90%;
+      }
 
-    @media only screen and (max-width: 600px) {
-      width: 100%;
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
   }
 
