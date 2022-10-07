@@ -30,6 +30,7 @@ export const Wrapper = styled.section`
 
     & h2 {
       font-size: 1.6rem;
+      color: var(--color-secondary);
 
       @media only screen and (max-width: 900px) {
         font-size: 1.2rem;

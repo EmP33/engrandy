@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+
+  main {
+    min-height: 35vh;
+  }
 `;
 
 export default GlobalStyle;

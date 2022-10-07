@@ -42,12 +42,12 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <Link to="#">
+                <a href="#">
                   {t('About us')} <BiChevronDown />
-                </Link>
+                </a>
                 <div className="dropdown">
                   <div className="dropdown__content">
-                    <Link to="">
+                    <Link to="/about-us/">
                       <span>{t('About us')}</span>
                     </Link>
                     <Link to="">
