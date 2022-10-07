@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.article`
   padding: 0 0 2rem;
   position: relative;
+  overflow: hidden;
 
   .hero-section {
     height: auto;
@@ -64,24 +65,6 @@ export const Wrapper = styled.article`
         margin: 5rem auto 0;
       }
 
-      & span {
-        color: var(--font-color-3);
-        font-weight: 600;
-        font-size: 1.1rem;
-
-        @media only screen and (max-width: 600px) {
-          font-size: 0.9rem;
-        }
-      }
-
-      & h1 {
-        font-size: 2.5rem;
-        color: var(--color-secondary);
-
-        @media only screen and (max-width: 600px) {
-          font-size: 2rem;
-        }
-      }
       & p {
         color: var(--font-color-2);
       }

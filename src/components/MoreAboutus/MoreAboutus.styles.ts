@@ -4,28 +4,7 @@ export const Wrapper = styled.section`
   width: 100%;
   color: var(--color-secondary);
   padding: 2rem 0 5rem;
-
-  & span {
-    color: var(--font-color-3);
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    text-align: center;
-
-    @media only screen and (max-width: 600px) {
-      font-size: 0.9rem;
-    }
-  }
-
-  & h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: var(--color-secondary);
-
-    @media only screen and (max-width: 600px) {
-      font-size: 2rem;
-    }
-  }
+  overflow: hidden;
 
   .info {
     width: 1150px;
@@ -66,10 +45,6 @@ export const Wrapper = styled.section`
       box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.35);
       transition: all 0.2s linear;
       cursor: pointer;
-
-      &:hover {
-        transform: scale(1.05);
-      }
 
       & svg {
         font-size: 3rem;
