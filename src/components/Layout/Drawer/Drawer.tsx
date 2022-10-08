@@ -99,7 +99,7 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
               </div>
             </li>
             <li>
-              <Link to="">Portfolio</Link>
+              <Link to="/portfolio/">Portfolio</Link>
             </li>
             <li>
               <Link to="/builder/">{t('Builder')}</Link>

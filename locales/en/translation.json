@@ -85,5 +85,6 @@
   "Name input cannot be blank.": "Name input cannot be blank.",
   "Enter correct email address.": "Enter correct email address.",
   "Message field cannot be blank.": "Message field cannot be blank.",
-  "Your message has been sent": "Your message has been sent"
+  "Your message has been sent": "Your message has been sent",
+  "Our projects": "Our projects"
 }

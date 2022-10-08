@@ -85,5 +85,6 @@
   "Name input cannot be blank.": "Pole imię nie może być puste.",
   "Enter correct email address.": "Wprowadź poprawny adres email.",
   "Message field cannot be blank.": "Pole wiadomość nie może być puste.",
-  "Your message has been sent": "Twoja wiadomość została wysłana"
+  "Your message has been sent": "Twoja wiadomość została wysłana",
+  "Our projects": "Nasze projekty"
 }
