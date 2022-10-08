@@ -38,9 +38,9 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
         <nav>
           <ul>
             <li>
-              <Link to="" onClick={() => handleShowDetails(1)}>
+              <a href="#" onClick={() => handleShowDetails(1)}>
                 {t('About us')} <FiChevronDown />
-              </Link>
+              </a>
               <div
                 className={
                   showDetails.number === 1 && showDetails.show
@@ -62,9 +62,9 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
               </div>
             </li>
             <li>
-              <Link to="" onClick={() => handleShowDetails(2)}>
+              <a href="#" onClick={() => handleShowDetails(2)}>
                 {t('Services')} <FiChevronDown />
-              </Link>
+              </a>
               <div
                 className={
                   showDetails.number === 2 && showDetails.show
@@ -108,9 +108,9 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
               <Link to="/contact/">{t('Contact')}</Link>
             </li>
             <li>
-              <Link to="" onClick={() => handleShowDetails(3)}>
+              <a href="#" onClick={() => handleShowDetails(3)}>
                 {url.includes('pl') ? 'PL' : 'EN'} <FiChevronDown />
-              </Link>
+              </a>
               <div
                 className={
                   showDetails.number === 3 && showDetails.show

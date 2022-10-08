@@ -1,5 +1,13 @@
 import type { GatsbyConfig } from 'gatsby';
 
+const myCustomQueries = {
+  xs: '(max-width: 320px)',
+  sm: '(max-width: 800px)',
+  md: '(max-width: 1024px)',
+  l: '(max-width: 1536px)',
+  portrait: '(orientation: portrait)',
+};
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Engrandy`,
@@ -8,6 +16,7 @@ const config: GatsbyConfig = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
+
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
@@ -36,6 +45,20 @@ const config: GatsbyConfig = {
       options: {
         path: `${__dirname}/locales`,
         name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/assets/images`,
+        name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/src/projects/`,
       },
     },
     {
@@ -78,6 +101,13 @@ const config: GatsbyConfig = {
         lang: 'en',
       },
     },
+    {
+      resolve: 'gatsby-plugin-breakpoints',
+      options: {
+        queries: myCustomQueries,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
   jsxRuntime: `automatic`,
 };
