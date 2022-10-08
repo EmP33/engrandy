@@ -17,7 +17,7 @@ const Portfolio = () => {
       <Wrapper>
         <Breadcrumb currentPage="Portfolio" link="/" previousPage="Home" />
         <PageHeading heading={t('Our projects')} subheading="Portfolio" />
-        <div className="projects-grid">
+        <div className="projects-grid" data-aos="slide-up">
           <PortfolioProject
             name="col-md"
             link="https://res.cloudinary.com/dtbemnmn4/image/upload/v1665219925/borgaz_ifdp1b.webp"

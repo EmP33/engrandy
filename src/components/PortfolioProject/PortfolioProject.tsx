@@ -1,3 +1,4 @@
+import { Link } from 'gatsby-plugin-react-i18next';
 import React from 'react';
 import { Wrapper } from './PortfolioProject.styles';
 
@@ -12,7 +13,9 @@ const PortfolioProject: React.FC<IProps> = ({ name, link }) => {
       link="https://res.cloudinary.com/dtbemnmn4/image/upload/v1665219497/ruh_pbju8r.png"
       className={name}
     >
-      <img src={link} alt="portfolio project" />
+      <Link to="">
+        <img src={link} alt="portfolio project" />
+      </Link>
     </Wrapper>
   );
 };

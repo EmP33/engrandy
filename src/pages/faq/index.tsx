@@ -46,7 +46,7 @@ const FAQ = () => {
             link="/"
           />
           <PageHeading subheading="FAQ" heading="Asked questions" />
-          <div className="questions">
+          <div className="questions" data-aos="slide-up">
             {questions.map(({ id, question, answer }) => (
               <QuestionBlock key={id} question={question} answer={answer} />
             ))}

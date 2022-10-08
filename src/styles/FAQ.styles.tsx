@@ -9,6 +9,8 @@ export const Wrapper = styled.section`
     padding: 0.5rem 0;
     width: 1150px;
     margin: 0 auto;
+    display: grid;
+    row-gap: 2rem;
 
     @media only screen and (max-width: 1200px) {
       width: 850px;
@@ -23,7 +25,7 @@ export const Wrapper = styled.section`
     }
 
     .questions {
-      margin: 3rem 0;
+      margin: 1rem 0;
       display: grid;
       grid-template-columns: 1fr;
       row-gap: 1rem;

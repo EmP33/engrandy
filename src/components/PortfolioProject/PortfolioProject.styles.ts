@@ -7,6 +7,11 @@ export const Wrapper = styled.div<{ link: string }>`
   -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.2);
   object-fit: contain;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(80%);
+  }
 
   & img {
     width: 100%;

@@ -44,8 +44,14 @@ const Contact = () => {
           link="/"
           previousPage={t('Home')}
         />
-        <h2>{t('Do you have additional questions? You can ask them here!')}</h2>
-        <div className="content-wrapper">
+        <h2 data-aos="fade-up">
+          {t('Do you have additional questions? You can ask them here!')}
+        </h2>
+        <div
+          className="content-wrapper"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <SendMessage />
           <form onSubmit={handleSubmit(onSubmit)}>
             <input

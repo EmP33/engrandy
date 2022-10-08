@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby-plugin-react-i18next';
 
 export const Wrapper = styled.header<{ isScrolled: boolean }>`
   width: 100%;
