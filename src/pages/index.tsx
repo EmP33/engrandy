@@ -1,3 +1,4 @@
+import React from 'react';
 import HeroSection from '@/components/HomePageComponents/HeroSection/HeroSection';
 import Layout from '@/components/Layout/layout';
 import Notification from '@/components/HomePageComponents/Notification/Notification';
@@ -8,10 +9,10 @@ import Whywe from '@/components/HomePageComponents/Whywe/Whywe';
 
 import { graphql } from 'gatsby';
 
-const Home = () => {
+const Home: React.FC<{ location: any }> = ({ location }) => {
   return (
     <>
-      <Layout>
+      <Layout location={location}>
         <HeroSection />
         <Whywe />
         <Process />

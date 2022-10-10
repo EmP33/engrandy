@@ -9,10 +9,10 @@ import { FiChevronDown } from 'react-icons/fi';
 interface IProps {
   toggleDrawer: () => void;
   showDrawer: boolean;
+  location: any;
 }
 
-const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
-  const url = typeof window !== 'undefined' ? window.location.pathname : '';
+const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer, location }) => {
   const { t } = useTranslation();
   const { languages, originalPath } = useI18next();
   const [showDetails, setShowDetails] = useState<{
@@ -109,7 +109,8 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer }) => {
             </li>
             <li>
               <a href="#" onClick={() => handleShowDetails(3)}>
-                {url.includes('pl') ? 'PL' : 'EN'} <FiChevronDown />
+                {location?.pathname?.includes('pl') ? 'PL' : 'EN'}{' '}
+                <FiChevronDown />
               </a>
               <div
                 className={

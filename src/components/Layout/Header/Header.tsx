@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 // Components
 import PrimaryButton from '../../Utils/PrimaryButton';
@@ -9,8 +9,7 @@ import { Wrapper } from './Header.styles';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BiChevronDown } from 'react-icons/bi';
 
-const Header = () => {
-  const url = typeof window !== 'undefined' ? window.location.pathname : '';
+const Header: React.FC<{ location: any }> = ({ location }) => {
   const { languages, originalPath } = useI18next();
   const { t } = useTranslation();
   const [showDrawer, setShowDrawer] = useState(false);
@@ -101,7 +100,8 @@ const Header = () => {
               </li>
               <li>
                 <Link to="#">
-                  {url.includes('pl') ? 'PL' : 'EN'} <BiChevronDown />
+                  {location?.pathname?.includes('pl') ? 'PL' : 'EN'}{' '}
+                  <BiChevronDown />
                 </Link>{' '}
                 <div className="dropdown">
                   <div className="dropdown__content">
@@ -119,7 +119,11 @@ const Header = () => {
           <GiHamburgerMenu onClick={toggleDrawer} />
         </div>
       </div>
-      <Drawer toggleDrawer={toggleDrawer} showDrawer={showDrawer} />
+      <Drawer
+        location={location}
+        toggleDrawer={toggleDrawer}
+        showDrawer={showDrawer}
+      />
     </Wrapper>
   );
 };

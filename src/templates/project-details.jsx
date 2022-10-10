@@ -10,7 +10,6 @@ const ProjectDetails = ({ data }) => {
     data.markdownRemark.frontmatter;
   const breakpoints = useBreakpoint();
 
-  console.log(data);
   return (
     <ParallaxProvider>
       <Layout>
