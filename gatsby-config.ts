@@ -62,6 +62,13 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `configurationDetails`,
+        path: `${__dirname}/src/configurationDetails/`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.

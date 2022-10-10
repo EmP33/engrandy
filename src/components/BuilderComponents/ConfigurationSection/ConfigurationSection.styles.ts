@@ -13,7 +13,7 @@ export const Wrapper = styled.section`
     margin-bottom: 2rem;
   }
 
-  & div {
+  & .content {
     display: grid;
     row-gap: 1rem;
 
@@ -30,7 +30,6 @@ export const Wrapper = styled.section`
       user-select: none;
     }
 
-    /* Hide the browser's default checkbox */
     label input {
       position: absolute;
       opacity: 0;
@@ -39,7 +38,6 @@ export const Wrapper = styled.section`
       width: 0;
     }
 
-    /* Create a custom checkbox */
     .checkmark {
       position: absolute;
       top: 0;
@@ -58,19 +56,16 @@ export const Wrapper = styled.section`
       background-color: var(--color-primary);
     }
 
-    /* Create the checkmark/indicator (hidden when not checked) */
     .checkmark:after {
       content: '';
       position: absolute;
       display: none;
     }
 
-    /* Show the checkmark when checked */
     label input:checked ~ .checkmark:after {
       display: block;
     }
 
-    /* Style the checkmark/indicator */
     label .checkmark:after {
       left: 9px;
       top: 5px;
@@ -100,6 +95,20 @@ export const Wrapper = styled.section`
     .price {
       display: block;
       font-weight: 500;
+    }
+    .summary-button {
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      column-gap: 0.5rem;
+      transition: all 0.2s ease-in;
+
+      &:hover {
+        column-gap: 0.15rem;
+      }
     }
   }
 `;

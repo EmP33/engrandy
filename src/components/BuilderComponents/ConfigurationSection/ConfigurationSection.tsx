@@ -15,7 +15,7 @@ const ConfigurationSection: React.FC<IProps> = ({
   return (
     <Wrapper id={sectionID}>
       <h2>{title}</h2>
-      <div>{children}</div>
+      <div className="content">{children}</div>
     </Wrapper>
   );
 };

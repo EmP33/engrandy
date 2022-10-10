@@ -19,6 +19,7 @@ const Navigation = () => {
           'order-packages',
           'animations',
           'additional-function',
+          'summary',
         ]}
         offset={100}
         activeNavClass="is-active"
@@ -34,6 +35,9 @@ const Navigation = () => {
           </a>
           <a href="#additional-function">
             <li>Additional functions</li>
+          </a>
+          <a href="#summary">
+            <li>Summary</li>
           </a>
         </ul>
       </ScrollspyNav>
