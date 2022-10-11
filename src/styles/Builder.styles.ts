@@ -13,6 +13,13 @@ export const Wrapper = styled.div`
     width: calc(100vw - 550px);
     position: fixed;
 
+    @media only screen and (max-width: 900px) {
+      height: 40vh;
+      width: 100vw;
+      position: fixed;
+      margin-top: 60px;
+    }
+
     & svg {
       font-size: 10rem;
     }
@@ -29,6 +36,14 @@ export const Wrapper = styled.div`
 
     @media only screen and (max-width: 1200px) {
       width: 500px;
+    }
+    @media only screen and (max-width: 900px) {
+      height: calc(100vh - 40vh - 60px);
+      overflow: auto;
+      padding: 0;
+      width: 100vw;
+      margin-left: 0;
+      margin-top: calc(40vh + 60px);
     }
 
     & form {

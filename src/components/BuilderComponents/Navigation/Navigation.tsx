@@ -1,6 +1,6 @@
 import { Link } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Navigation.styles';
-import GlobalStyle from '@/styles/Global.styles';
+
 // @ts-ignore
 import ScrollspyNav from 'react-scrollspy-nav';
 // Icons
@@ -8,8 +8,7 @@ import { BiChevronLeft } from 'react-icons/bi';
 
 const Navigation = () => {
   return (
-    <Wrapper>
-      <GlobalStyle />
+    <Wrapper data-aos="fade-down">
       <Link to="/" className="home-link">
         <BiChevronLeft />
         Home
@@ -18,7 +17,8 @@ const Navigation = () => {
         scrollTargetIds={[
           'order-packages',
           'animations',
-          'additional-function',
+          'contact',
+          'other-function',
           'summary',
         ]}
         offset={100}
@@ -33,7 +33,10 @@ const Navigation = () => {
           <a href="#animations">
             <li>Animations</li>
           </a>
-          <a href="#additional-function">
+          <a href="#contact">
+            <li>Contact Form</li>
+          </a>
+          <a href="#other-function">
             <li>Additional functions</li>
           </a>
           <a href="#summary">

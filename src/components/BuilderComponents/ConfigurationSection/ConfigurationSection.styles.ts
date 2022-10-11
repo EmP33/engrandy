@@ -7,10 +7,22 @@ export const Wrapper = styled.section`
   -moz-box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.25);
 
+  @media only screen and (max-width: 600px) {
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width: 450px) {
+    padding: 1rem 0.5rem;
+  }
+
   & h2 {
     font-size: 1.8rem;
     font-weight: 300;
     margin-bottom: 2rem;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 1.5rem;
+    }
   }
 
   & .content {
@@ -28,6 +40,10 @@ export const Wrapper = styled.section`
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+
+      @media only screen and (max-width: 600px) {
+        padding-left: 32.5px;
+      }
     }
 
     label input {
@@ -38,7 +54,7 @@ export const Wrapper = styled.section`
       width: 0;
     }
 
-    .checkmark {
+    input[type='radio'] ~ .checkmark {
       position: absolute;
       top: 0;
       left: 0;
@@ -48,12 +64,22 @@ export const Wrapper = styled.section`
       background-color: #eee;
     }
 
+    input[type='checkbox'] ~ .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      width: 25px;
+      border-radius: 5px;
+      background-color: #eee;
+    }
+
     label:hover input ~ .checkmark {
       background-color: #ccc;
     }
 
     label input:checked ~ .checkmark {
-      background-color: var(--color-primary);
+      background-color: var(--color-secondary);
     }
 
     .checkmark:after {
@@ -71,7 +97,7 @@ export const Wrapper = styled.section`
       top: 5px;
       width: 5px;
       height: 10px;
-      border: solid white;
+      border: solid var(--font-color-3);
       border-width: 0 3px 3px 0;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -90,6 +116,12 @@ export const Wrapper = styled.section`
           color: var(--color-primary);
         }
       }
+    }
+
+    .description {
+      font-size: 0.8rem;
+      display: block;
+      margin: 0.2rem 0 0.4rem;
     }
 
     .price {

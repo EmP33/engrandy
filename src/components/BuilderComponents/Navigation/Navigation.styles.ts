@@ -24,19 +24,7 @@ export const Wrapper = styled.div`
     border-bottom: 3px solid #fff;
 
     @media only screen and (max-width: 1200px) {
-      padding: 1.3rem 1.2rem;
-    }
-
-    @media only screen and (max-width: 900px) {
-      font-size: 1rem;
-      padding: 1rem 1rem;
-    }
-    @media only screen and (max-width: 750px) {
-      padding: 1rem 0.5rem;
-    }
-    @media only screen and (max-width: 700px) {
-      color: #000;
-      padding: 0.5rem 0.75rem;
+      padding: 1rem;
     }
 
     & svg {
@@ -48,15 +36,20 @@ export const Wrapper = styled.div`
     font-weight: 500;
     color: var(--font-color-1);
     margin-right: 3rem;
+    border-bottom: 3px solid #fff;
+
+    @media only screen and (max-width: 1200px) {
+      margin-right: 0.5rem;
+    }
   }
 
   ul {
     display: flex;
     list-style: none;
 
-    /* @media only screen and (max-width: 900px) {
+    @media only screen and (max-width: 900px) {
       display: none;
-    } */
+    }
 
     & a {
       color: var(--font-color-2);
@@ -67,18 +60,8 @@ export const Wrapper = styled.div`
       border-bottom: 3px solid #fff;
 
       @media only screen and (max-width: 1200px) {
-        padding: 1.3rem 1.2rem;
-      }
-
-      @media only screen and (max-width: 900px) {
+        padding: 1rem;
         font-size: 1rem;
-        padding: 1rem 1rem;
-      }
-      @media only screen and (max-width: 750px) {
-        padding: 1rem 0.5rem;
-      }
-      @media only screen and (max-width: 700px) {
-        display: none;
       }
 
       &:hover {
