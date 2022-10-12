@@ -13,6 +13,10 @@ export const Wrapper = styled.div`
     width: calc(100vw - 550px);
     position: fixed;
 
+    @media only screen and (max-width: 1200px) {
+      width: calc(100vw - 500px);
+    }
+
     @media only screen and (max-width: 900px) {
       height: 40vh;
       width: 100vw;
@@ -36,6 +40,7 @@ export const Wrapper = styled.div`
 
     @media only screen and (max-width: 1200px) {
       width: 500px;
+      margin-top: 60px;
     }
     @media only screen and (max-width: 900px) {
       height: calc(100vh - 40vh - 60px);

@@ -20,38 +20,44 @@ const Footer = () => {
         <div className="footer-blocks__block">
           <h3>{t('About us')}</h3>
           <ul>
-            <Link to="/about-us/">
-              <li>{t('About us')}</li>
-            </Link>
-            <Link to="/our-values/">
-              <li>{t('Our values')}</li>
-            </Link>
-            <Link to="/faq/">
-              <li>FAQ</li>
-            </Link>
+            <li>
+              <Link to="/about-us/">{t('About us')} </Link>
+            </li>
+
+            <li>
+              <Link to="/our-values/">{t('Our values')} </Link>
+            </li>
+
+            <li>
+              <Link to="/faq/">FAQ</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-blocks__block">
           <h3>{t('Services')}</h3>
           <ul>
-            <Link to="/">
-              <li>{t('Creating web applications')}</li>
-            </Link>
-            <Link to="/">
-              <li>{t('Creating SPA websites')}</li>
-            </Link>
-            <Link to="/">
-              <li>{t('Creating portfolio pages')}</li>
-            </Link>
+            <li>
+              <Link to="/">{t('Creating web applications')}</Link>
+            </li>
+
+            <li>
+              <Link to="/">{t('Creating SPA websites')} </Link>
+            </li>
+
+            <li>
+              <Link to="/">{t('Creating portfolio pages')}</Link>
+            </li>
           </ul>
         </div>
         <div className="footer-blocks__block">
           <h3>{t('Language')}</h3>
           <ul>
             {languages.map((lng) => (
-              <Link key={lng} to={originalPath} language={lng}>
-                <li>{lng.toUpperCase()}</li>
-              </Link>
+              <li key={lng}>
+                <Link to={originalPath} language={lng}>
+                  {lng.toUpperCase()}
+                </Link>
+              </li>
             ))}
           </ul>
         </div>

@@ -53,14 +53,13 @@ export const Wrapper = styled.footer`
       }
       & ul {
         list-style: none;
+        & li {
+          margin: 0.5rem 0;
 
-        & a {
-          color: var(--font-color-3);
-          text-decoration: none;
-          font-size: 16px;
-
-          & li {
-            margin: 0.5rem 0;
+          & a {
+            color: var(--font-color-3);
+            text-decoration: none;
+            font-size: 16px;
           }
         }
       }

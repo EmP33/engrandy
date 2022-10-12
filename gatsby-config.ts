@@ -34,13 +34,6 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: `gatsby-plugin-portal`,
-      options: {
-        key: 'portal',
-        id: 'portal',
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/locales`,

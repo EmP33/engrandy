@@ -27,21 +27,21 @@ const Navigation = () => {
         headerBackground="true"
       >
         <ul>
-          <a href="#order-packages">
-            <li>Packages</li>
-          </a>
-          <a href="#animations">
-            <li>Animations</li>
-          </a>
-          <a href="#contact">
-            <li>Contact Form</li>
-          </a>
-          <a href="#other-function">
-            <li>Additional functions</li>
-          </a>
-          <a href="#summary">
-            <li>Summary</li>
-          </a>
+          <li>
+            <a href="#order-packages">Packages</a>
+          </li>
+          <li>
+            <a href="#animations">Animations </a>
+          </li>
+          <li>
+            <a href="#contact">Contact Form </a>
+          </li>
+          <li>
+            <a href="#other-function">Additional functions </a>
+          </li>
+          <li>
+            <a href="#summary">Summary </a>
+          </li>
         </ul>
       </ScrollspyNav>
       <span>Engrandy</span>

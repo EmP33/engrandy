@@ -10,6 +10,7 @@ Pakiet Landing Page jest idealną opcją dla małych biznesów lub stron persona
 - Dostosowanie do wersji na telefon (RWD)
 - Lepsze pozycjonowanie w wynikach wyszukiwania (SEO)
 - Zabezpieczony formularz kontaktowy
+- Brak ograniczenia ilości sekcji
 - Kopia zapasowa
 - Pomoc techniczna na 1 rok
 - 1 strona

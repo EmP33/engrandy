@@ -36,14 +36,16 @@ const ProjectDetails = ({ data }) => {
           </div>
           <div className="content-wrapper">
             <div className="desktop-images">
-              {desktopImages.map((img) => (
-                <GatsbyImage key="1" image={getImage(img)} alt="im" />
-              ))}
+              {desktopImages &&
+                desktopImages.map((img) => (
+                  <GatsbyImage key="1" image={getImage(img)} alt="im" />
+                ))}
             </div>
             <div className="mobile-images">
-              {mobileImages.map((img) => (
-                <GatsbyImage key="1" image={getImage(img)} alt="im" />
-              ))}
+              {mobileImages &&
+                mobileImages.map((img) => (
+                  <GatsbyImage key="1" image={getImage(img)} alt="im" />
+                ))}
             </div>
           </div>
         </Wrapper>

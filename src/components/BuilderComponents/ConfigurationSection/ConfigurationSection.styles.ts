@@ -29,6 +29,20 @@ export const Wrapper = styled.section`
     display: grid;
     row-gap: 1rem;
 
+    & .configuration-element {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+
+      & svg {
+        font-size: 1.4rem;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-primary);
+        }
+      }
+    }
+
     label {
       display: block;
       position: relative;
@@ -108,14 +122,6 @@ export const Wrapper = styled.section`
       display: flex;
       justify-content: space-between;
       align-items: center;
-
-      & svg {
-        font-size: 1.4rem;
-
-        &:hover {
-          color: var(--color-primary);
-        }
-      }
     }
 
     .description {
