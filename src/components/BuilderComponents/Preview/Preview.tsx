@@ -19,8 +19,6 @@ const Preview: React.FC<IProps> = ({
   contact,
   functions,
 }) => {
-  console.log({ pack, animations, contact, functions });
-
   return (
     <Wrapper className="custom-pack" data-aos="fade-in">
       <div className="navigation">

@@ -1,6 +1,6 @@
 ---
-title: Advanced Animations
-slug: advanced-animations
+title: Zaawansowane Animacje
+slug: advanced-animations-pl
 preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665479543/56cf242d-c7c1-47c6-95df-f89279f4697a_zpadn8.webm
 ---
 

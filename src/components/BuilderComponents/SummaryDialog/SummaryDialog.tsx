@@ -1,6 +1,7 @@
 import React from 'react';
 import { Wrapper } from './SummaryDialog.styles';
 import { IoMdClose } from 'react-icons/io';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 interface IProps {
   hideSummary: () => void;
@@ -14,6 +15,8 @@ interface IProps {
 
 const SummaryDialog: React.FC<IProps> = ({ hideSummary, configuration }) => {
   const { pack, animations, contact, functions } = configuration;
+  const { t } = useTranslation();
+
   return (
     <Wrapper onClick={hideSummary}>
       <div
@@ -24,15 +27,31 @@ const SummaryDialog: React.FC<IProps> = ({ hideSummary, configuration }) => {
         }}
       >
         <div className="details__heading">
-          <h2>Podsumowanie konfiguracji</h2>
+          <h2>{t('Configuration Summary')}</h2>
           <IoMdClose onClick={hideSummary} />
         </div>
         <div className="details__content">
           <ul>
-            <li>Wybrana paczka: {pack}</li>
-            <li>Wybrane animacje: {animations}</li>
-            <li>Formularz kontaktowy lub mapa: {contact}</li>
-            <li>Dodatkowe funkcje: {functions.join(', ')}</li>
+            <li>
+              {t('Selected package')}: {t(pack)}
+            </li>
+            <li>
+              {t('Selected animations')}: {t(animations)}
+            </li>
+            <li>
+              {t('Contact form and map')}:{' '}
+              {typeof contact === 'object'
+                ? contact.map((el) => t(el)).join(', ')
+                : t(contact)}
+            </li>
+            <li>
+              {t('Additional Features')}:{' '}
+              {functions && functions.length !== 0
+                ? typeof functions === 'object'
+                  ? functions.map((el) => t(el)).join(', ')
+                  : t(functions)
+                : t('No additional functions selected')}
+            </li>
           </ul>
         </div>
       </div>

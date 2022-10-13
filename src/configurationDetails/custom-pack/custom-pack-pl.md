@@ -1,6 +1,6 @@
 ---
-title: Custom Pack
-slug: custom-pack
+title: Pakiet Custom
+slug: custom-pack-pl
 preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665566421/95591e69-abb0-4c0f-9316-1b4064ec2641_sjwzcd.webm
 ---
 
@@ -14,3 +14,5 @@ Pakiet Custom oferuje Ci najprostszy możliwy schemat strony, jaki jesteśmy w s
 - 1 strona
 
 #### Pamietaj! Po Twojej stronie leży dostarczenie projektu strony oraz wszystkich niezbednych plików, aby nasz zespół mógł dostarczyć ten produkt!
+
+#### Lub możesz wybrać odpowiednią opcję w dodatkowych funkcjach.

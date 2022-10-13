@@ -1,6 +1,6 @@
 ---
-title: Business Website Pack
-slug: business-website-pack
+title: Pakiet Biznes
+slug: business-website-pack-pl
 preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665567479/67696ee8-9e78-4d27-b260-a6b32a4a4a9b_cytlvl.webm
 ---
 

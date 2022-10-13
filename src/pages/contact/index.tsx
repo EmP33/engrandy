@@ -29,7 +29,6 @@ const Contact = () => {
   } = useForm<Inputs>();
   const onSubmit = (data: Inputs) => {
     setShowNotification(true);
-    console.log(data);
   };
 
   const hideNotification = () => {
