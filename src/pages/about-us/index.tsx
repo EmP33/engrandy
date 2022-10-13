@@ -1,3 +1,4 @@
+import React from 'react';
 import AboutImage from '@/assets/AboutImage';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Layout from '@/components/Layout/layout';
@@ -8,10 +9,10 @@ import { Wrapper } from '@/styles/Aboutus.styles';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-const Aboutus = () => {
+const Aboutus: React.FC<{ location: any }> = ({ location }) => {
   const { t } = useTranslation();
   return (
-    <Layout>
+    <Layout location={location}>
       <Wrapper>
         <div className="hero-section">
           <div className="content-wrapper">

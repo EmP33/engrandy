@@ -115,7 +115,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
               </li>
             </ul>
           </nav>
-          <PrimaryButton text={t('Check the price')} />
+          <PrimaryButton link="/builder/" text={t('Check the price')} />
           <GiHamburgerMenu onClick={toggleDrawer} />
         </div>
       </div>

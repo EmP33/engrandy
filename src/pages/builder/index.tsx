@@ -52,6 +52,8 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
     AOS.init();
   }, []);
 
+  console.log(location);
+
   return (
     <>
       <GlobalStyle />

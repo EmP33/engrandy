@@ -50,7 +50,7 @@ const Packages = () => {
           </ul>
           <div className="package__action">
             <h4>{t('$90')}</h4>
-            <PrimaryButton text={t('Order now')} />
+            <PrimaryButton link="/builder/" text={t('Order now')} />
           </div>
         </div>
         <div className="packages__package" data-aos="fade-up">
@@ -91,7 +91,7 @@ const Packages = () => {
           </ul>
           <div className="package__action">
             <h4>{t('$150')}</h4>
-            <PrimaryButton text={t('Order now')} />
+            <PrimaryButton link="/builder/" text={t('Order now')} />
           </div>
         </div>
         <div className="packages__package" data-aos="fade-left">
@@ -132,7 +132,10 @@ const Packages = () => {
           </ul>
           <div className="package__action">
             <h4>{t('$230')}</h4>
-            <PrimaryButton text={t('Order now')} />
+            <PrimaryButton
+              link="/builder?pack=advanced"
+              text={t('Order now')}
+            />
           </div>
         </div>
       </div>

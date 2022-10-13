@@ -9,7 +9,7 @@ const Notification = () => {
       <div className="content-wrapper">
         <h2>{t('Do you have additional questions')}</h2>
         <Link to="/faq/">
-          <PrimaryButton dark text="FAQ" />
+          <PrimaryButton link="/faq/" dark text="FAQ" />
         </Link>
       </div>
     </Wrapper>

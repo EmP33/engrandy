@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { useForm } from 'react-hook-form';
@@ -19,7 +19,7 @@ type Inputs = {
   email: string;
 };
 
-const Contact = () => {
+const Contact: React.FC<{ location: any }> = ({ location }) => {
   const [showNotification, setShowNotification] = useState(false);
   const { t } = useTranslation();
   const {
@@ -36,7 +36,7 @@ const Contact = () => {
   };
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Wrapper>
         <Breadcrumb
           currentPage={t('Contact')}

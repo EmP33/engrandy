@@ -45,10 +45,10 @@ export const Wrapper = styled.section`
     }
 
     & button {
-      padding: 1rem 3rem;
+      padding: 0.3rem 3rem;
 
       @media only screen and (max-width: 500px) {
-        padding: 1.5rem 3rem;
+        padding: 0.3rem 3rem;
         width: 100%;
       }
     }

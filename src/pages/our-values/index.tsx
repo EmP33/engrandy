@@ -1,3 +1,4 @@
+import React from 'react';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Layout from '@/components/Layout/layout';
 import MoreAboutus from '@/components/MoreAboutus/MoreAboutus';
@@ -6,10 +7,10 @@ import { Wrapper } from '@/styles/BasicWrapper.styles';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-const OurValues = () => {
+const OurValues: React.FC<{ location: any }> = ({ location }) => {
   const { t } = useTranslation();
   return (
-    <Layout>
+    <Layout location={location}>
       <Wrapper>
         <Breadcrumb
           currentPage={t('Our values')}

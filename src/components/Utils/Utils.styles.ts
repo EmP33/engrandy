@@ -6,24 +6,29 @@ export const PrimaryButtonStyle = styled.button<{
 }>`
   background-color: ${({ dark }) =>
     dark ? 'var(--color-secondary)' : 'var(--color-primary)'};
-  padding: 1rem 1rem;
-  color: ${({ dark }) =>
-    dark ? 'var(--color-primary)' : 'var(--color-secondary)'};
   font-size: 0.9rem;
   font-weight: 600;
   border: 0;
   border-radius: 0.5rem;
   cursor: pointer;
 
-  &:hover > div > div {
+  &:hover .wrapper > .inside-wrapper {
     transform: translateY(-50%);
   }
 
-  & > div {
+  & a {
+    display: block;
+    color: ${({ dark }) =>
+      dark ? 'var(--color-primary)' : 'var(--color-secondary)'};
+    text-decoration: none;
+    padding: 1rem 1rem;
+  }
+
+  & .wrapper {
     height: 16px;
     overflow: hidden;
 
-    & div {
+    & .inside-wrapper {
       transition: all 0.15s linear;
       display: grid;
     }
@@ -33,23 +38,27 @@ export const PrimaryButtonStyle = styled.button<{
 export const OutlineButtonStyle = styled.button`
   background: transparent;
   padding: 1rem 1rem;
-  color: var(--color-secondary);
   font-size: 0.9rem;
   font-weight: 600;
   border: 0;
   border-radius: 0.5rem;
   cursor: pointer;
 
-  &:hover > div > div {
+  &:hover .wrapper > .inside-wrapper {
     transform: translateY(-50%);
     text-decoration: underline;
   }
 
-  & > div {
+  & a {
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  & .wrapper {
     height: 16px;
     overflow: hidden;
 
-    & div {
+    & .inside-wrapper {
       transition: all 0.15s linear;
       display: grid;
     }

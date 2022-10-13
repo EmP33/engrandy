@@ -1,3 +1,4 @@
+import React from 'react';
 import Layout from '@/components/Layout/layout';
 import PortfolioProject from '@/components/PortfolioProject/PortfolioProject';
 import { Wrapper } from '@/styles/Portfolio.styles';
@@ -8,12 +9,12 @@ import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 
-const Portfolio = () => {
+const Portfolio: React.FC<{ location: any }> = ({ location }) => {
   const { t } = useTranslation();
   const breakpoints = useBreakpoint();
 
   return (
-    <Layout>
+    <Layout location={location}>
       <Wrapper>
         <Breadcrumb currentPage="Portfolio" link="/" previousPage="Home" />
         <PageHeading heading={t('Our projects')} subheading="Portfolio" />

@@ -1,3 +1,4 @@
+import React from 'react';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import Layout from '@/components/Layout/layout';
 import PageHeading from '@/components/PageHeading/PageHeading';
@@ -34,10 +35,10 @@ const questions: IQuestion[] = [
   },
 ];
 
-const FAQ = () => {
+const FAQ: React.FC<{ location: any }> = ({ location }) => {
   const { t } = useTranslation();
   return (
-    <Layout>
+    <Layout location={location}>
       <Wrapper>
         <div className="content-wrapper">
           <Breadcrumb
