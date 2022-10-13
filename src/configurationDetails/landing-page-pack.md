@@ -1,7 +1,7 @@
 ---
 title: Landing Page Pack
 slug: landing-page-pack
-description: Pakiet Landing Page jest idealną opcją dla małych biznesów lub stron personalnych. Jeżeli zależy ci na prostej przejrzystej stronie dostosowanej dla każdego rodzaju urządzeń moze być to dobra opcja.
+preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665598321/bmw_vtlgxg.webm
 ---
 
 Pakiet Landing Page jest idealną opcją dla małych biznesów lub stron personalnych. Jeżeli zależy ci na prostej przejrzystej stronie dostosowanej dla każdego rodzaju urządzeń moze być to dobra opcja.
