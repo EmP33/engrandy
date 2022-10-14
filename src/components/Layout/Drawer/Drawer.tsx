@@ -102,7 +102,7 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer, location }) => {
               <Link to="/portfolio/">Portfolio</Link>
             </li>
             <li>
-              <Link to="/builder/">{t('Builder')}</Link>
+              <Link to="/builder?pack=custom-pack">{t('Builder')}</Link>
             </li>
             <li>
               <Link to="/contact/">{t('Contact')}</Link>

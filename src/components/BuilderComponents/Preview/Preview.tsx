@@ -7,10 +7,10 @@ import Cat from '@/assets/Cat';
 import { StaticImage } from 'gatsby-plugin-image';
 
 interface IProps {
-  pack: string;
-  animations: string;
-  contact: string[] | string;
-  functions: string[] | string;
+  pack: string | null;
+  animations: string | null;
+  contact: string[] | string | null;
+  functions: string[] | string | boolean | null;
 }
 
 const Preview: React.FC<IProps> = ({
@@ -23,7 +23,7 @@ const Preview: React.FC<IProps> = ({
     <Wrapper className="custom-pack" data-aos="fade-in">
       <div className="navigation">
         <span>
-          {functions && functions.includes('create-custom-elements') ? (
+          {functions && functions?.includes('create-custom-elements') ? (
             <StaticImage
               alt="custom logo"
               src="../../../assets/images/builder/CUSTOM.webp"
@@ -34,8 +34,10 @@ const Preview: React.FC<IProps> = ({
             'landing'
           ) : pack === 'business-website-pack' ? (
             'business'
-          ) : (
+          ) : pack === 'advanced-website-pack' ? (
             'advanced'
+          ) : (
+            ''
           )}
         </span>
         {(pack === 'business-website-pack' ||
@@ -49,7 +51,7 @@ const Preview: React.FC<IProps> = ({
         <GiHamburgerMenu />
       </div>
       <div className="hero">
-        {pack !== 'custom-pack' && (
+        {pack !== 'custom-pack' && pack !== null && (
           <div className="hero-slides-buttons">
             <span></span>
             <span></span>
@@ -74,7 +76,7 @@ const Preview: React.FC<IProps> = ({
       <section className="section section--2">
         <h2>SECTION - 2</h2>
       </section>
-      {functions && functions.includes('reviews') && (
+      {functions && functions?.includes('reviews') && (
         <Reviews>
           <span>Reviews</span>
           <div className="reviews">
@@ -96,25 +98,27 @@ const Preview: React.FC<IProps> = ({
       <section className="section section--3">
         <h2>SECTION - 3</h2>
       </section>
+
       {typeof contact === 'object' ? (
-        contact.includes('no-contact-form') &&
-        !contact.includes('add-a-map') ? (
+        (contact?.includes('no-contact-form') &&
+          !contact?.includes('add-a-map')) ||
+        !contact ? (
           ''
         ) : (
           <Contact
-            isMap={contact.includes('add-a-map')}
-            advanced={contact.includes('advanced-contact-form')}
+            isMap={contact?.includes('add-a-map')}
+            advanced={contact?.includes('advanced-contact-form')}
           >
-            {contact.includes('add-a-map') && (
+            {contact?.includes('add-a-map') && (
               <div className="contact-map">MAP</div>
             )}
-            {!contact.includes('no-contact-form') && (
+            {!contact?.includes('no-contact-form') && (
               <div className="contact-form">
                 <div className="contact-form__heading">
-                  {contact.includes('advanced-contact-form')
+                  {contact?.includes('advanced-contact-form')
                     ? 'Advanced Contact'
                     : 'Basic Contact'}
-                  {functions && functions.includes('social-media') && (
+                  {functions && functions?.includes('social-media') && (
                     <div className="socials">
                       <BsFacebook />
                       <AiFillInstagram />
@@ -139,13 +143,15 @@ const Preview: React.FC<IProps> = ({
           advanced={contact === 'advanced-contact-form'}
           isMap={contact.includes('add-a-map')}
         >
-          <div className="contact-map">MAP</div>
+          {contact.includes('add-a-map') && (
+            <div className="contact-map">MAP</div>
+          )}
           <div className="contact-form">
             <div className="contact-form__heading">
               {contact.includes('advanced-contact-form')
                 ? 'Advanced Contact'
                 : 'Basic Contact'}
-              {functions && functions.includes('social-media') && (
+              {functions && functions?.includes('social-media') && (
                 <div className="socials">
                   <BsFacebook />
                   <AiFillInstagram />
@@ -163,7 +169,7 @@ const Preview: React.FC<IProps> = ({
       )}
       <footer>
         <span>{pack || 'custom-pack'}</span>
-        {functions && functions.includes('social-media') && (
+        {functions && functions?.includes('social-media') && (
           <div className="socials">
             <BsFacebook />
             <AiFillInstagram />

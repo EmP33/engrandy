@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { graphql } from 'gatsby';
+
+import { graphql, navigate } from 'gatsby';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import AOS from 'aos';
@@ -20,22 +21,99 @@ import { IoIosInformationCircleOutline } from 'react-icons/io';
 import { TbNotes } from 'react-icons/tb';
 
 type Inputs = {
-  orderPackage: string;
-  animations: string;
-  contactForm: string;
-  additionalFunctions: string;
+  orderPackage: string | null;
+  animations: string | null;
+  contactForm: string | null;
+  additionalFunctions: string | boolean | null;
+};
+
+type Detail = {
+  open: boolean;
+  detailsSlug: null | string;
+};
+
+const prices = {
+  orderPackage: [
+    { name: 'custom-pack', price: 25 },
+    { name: 'landing-page-pack', price: 75 },
+    { name: 'business-website-pack', price: 135 },
+    { name: 'advanced-website-pack', price: 208 },
+  ],
+  animations: [
+    { name: 'basic-animations', price: 5 },
+    { name: 'advanced-animations', price: 25 },
+    { name: 'zero-animations', price: 0 },
+  ],
+  contact: [
+    { name: 'no-contact-form', price: 0 },
+    { name: 'basic-contact-form', price: 10 },
+    { name: 'advanced-contact-form', price: 17 },
+    { name: 'add-a-map', price: 5 },
+  ],
+  additionalFunctions: [
+    { name: 'social-media', price: 4 },
+    { name: 'additional-page', price: 5 },
+    { name: 'loading-screen', price: 10 },
+    { name: 'create-custom-elements', price: 10 },
+    { name: 'advanced-interactions', price: 10 },
+    { name: 'reviews', price: 10 },
+    { name: 'cms', price: 25 },
+  ],
 };
 
 const Builder: React.FC<{ location: any }> = ({ location }) => {
-  const [showDetails, setShowDetails] = useState<{
-    open: boolean;
-    detailsSlug: null | string;
-  }>({
+  const [showDetails, setShowDetails] = useState<Detail>({
     open: false,
     detailsSlug: null,
   });
+  const [inputs, setInputs] = useState<Inputs>({
+    orderPackage: null,
+    animations: null,
+    contactForm: null,
+    additionalFunctions: null,
+  });
+  const [chosenPack, setChosenPack] = useState<null | string>('');
   const [showSummary, setShowSummary] = useState(false);
   const { register, handleSubmit, watch } = useForm<Inputs>();
+  const params = new URLSearchParams(location.search);
+
+  const packPrice = prices?.orderPackage.find(
+    (pack) => pack.name === watch('orderPackage'),
+  )?.price;
+  const animationsPrice = prices?.animations.find(
+    (anim) => anim.name === watch('animations'),
+  )?.price;
+  const contactPrice =
+    typeof watch('contactForm') === 'object'
+      ? watch('contactForm')
+          .map(
+            (el: string) =>
+              prices?.contact.find((con) => con.name === el)?.price,
+          )
+          .reduce((acc: number, cur: number) => acc + cur)
+      : prices?.contact.find((cont) => cont.name === watch('contactForm'))
+          ?.price;
+  const additionalFunctionsPrice =
+    typeof watch('additionalFunctions') === 'object'
+      ? watch('additionalFunctions')?.map(
+          (el: string) =>
+            prices?.additionalFunctions.find((con) => con.name === el)?.price,
+        ).length
+        ? watch('additionalFunctions')
+            ?.map(
+              (el: string) =>
+                prices?.additionalFunctions.find((con) => con.name === el)
+                  ?.price,
+            )
+            ?.reduce((acc: number, cur: number) => acc + cur)
+        : 0
+      : prices?.additionalFunctions.find(
+          (cont) => cont.name === watch('additionalFunctions'),
+        )?.price || 0;
+
+  const configurationPrice =
+    packPrice + animationsPrice + contactPrice + additionalFunctionsPrice;
+
   const { t } = useTranslation();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
@@ -50,10 +128,42 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
 
   useEffect(() => {
     AOS.init();
+
+    if (params.get('pack') === 'advanced-website-pack') {
+      setInputs({
+        orderPackage: 'advanced-website-pack',
+        animations: 'basic-animations',
+        contactForm: 'advanced-contact-form',
+        additionalFunctions: false,
+      });
+    }
+    if (params.get('pack') === 'business-website-pack') {
+      setInputs({
+        orderPackage: 'business-website-pack',
+        animations: 'basic-animations',
+        contactForm: 'basic-contact-form',
+        additionalFunctions: false,
+      });
+    }
+    if (params.get('pack') === 'landing-page-pack') {
+      setInputs({
+        orderPackage: 'landing-page-pack',
+        animations: 'basic-animations',
+        contactForm: 'basic-contact-form',
+        additionalFunctions: false,
+      });
+    }
+
+    setChosenPack(params.get('pack'));
   }, []);
 
-  console.log(location);
+  useEffect(() => {
+    if (!watch('orderPackage') || watch('orderPackage') === chosenPack) return;
+    setChosenPack(watch('orderPackage'));
+    navigate(`/builder/?pack=${watch('orderPackage')}`);
+  }, [watch('orderPackage')]);
 
+  if (chosenPack === '') return '';
   return (
     <>
       <GlobalStyle />
@@ -61,10 +171,12 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
       <Wrapper>
         <section className="preview">
           <Preview
-            pack={watch('orderPackage')}
-            animations={watch('animations')}
-            contact={watch('contactForm')}
-            functions={watch('additionalFunctions')}
+            pack={watch('orderPackage') || inputs.orderPackage}
+            animations={watch('animations') || inputs.animations}
+            contact={watch('contactForm') || inputs.contactForm}
+            functions={
+              watch('additionalFunctions') || inputs.additionalFunctions
+            }
           />
         </section>
         <article
@@ -84,7 +196,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     value="custom-pack"
                     type="radio"
                     id="order-package-4"
-                    defaultChecked
+                    defaultChecked={!chosenPack || chosenPack === 'custom-pack'}
                   />
                   <span className="checkmark"></span>{' '}
                   <span className="name">{t('Custom Pack')}</span>
@@ -113,6 +225,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     value="landing-page-pack"
                     type="radio"
                     id="order-package-1"
+                    defaultChecked={chosenPack === 'landing-page-pack'}
                   />
                   <span className="checkmark"></span>
                   <span className="name">{t('Landing Page Pack')}</span>
@@ -141,6 +254,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     value="business-website-pack"
                     type="radio"
                     id="order-package-2"
+                    defaultChecked={chosenPack === 'business-website-pack'}
                   />
                   <span className="checkmark"></span>{' '}
                   <span className="name">{t('Business Website Pack')}</span>{' '}
@@ -169,6 +283,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     value="advanced-website-pack"
                     type="radio"
                     id="order-package-3"
+                    defaultChecked={chosenPack === 'advanced-website-pack'}
                   />
                   <span className="checkmark"></span>
                   <span className="name">{t('Advanced Website Pack')}</span>
@@ -202,6 +317,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     {...register('animations')}
                     value="basic-animations"
                     id="basic-animations"
+                    defaultChecked={chosenPack !== 'custom-pack'}
                   />
                   <span className="checkmark"></span>
                   <span className="name">{t('Basic Animations')}</span>
@@ -256,7 +372,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                   id="zero-animations"
                   {...register('animations')}
                   value="zero-animations"
-                  defaultChecked
+                  defaultChecked={!chosenPack || chosenPack === 'custom-pack'}
                 />
                 <span className="checkmark"></span>{' '}
                 <span className="name">{t('Zero Animations')}</span>
@@ -283,6 +399,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     id="basic-contact-form"
                     {...register('contactForm')}
                     value="basic-contact-form"
+                    defaultChecked={chosenPack !== 'custom-pack'}
                   />
                   <span className="checkmark"></span>{' '}
                   <span className="name">{t('Basic Contact Form')}</span>
@@ -311,6 +428,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                     id="advanced-contact-form"
                     {...register('contactForm')}
                     value="advanced-contact-form"
+                    defaultChecked={chosenPack === 'advanced-website-pack'}
                   />
                   <span className="checkmark"></span>{' '}
                   <span className="name">{t('Advanced Contact Form')}</span>
@@ -397,22 +515,24 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                 />
               </div>
 
-              <label htmlFor="additional-page">
-                <input
-                  type="checkbox"
-                  {...register('additionalFunctions')}
-                  value="additional-page"
-                  id="additional-page"
-                />
-                <span className="checkmark"></span>{' '}
-                <span className="name">{t('Additional Page')}</span>{' '}
-                <p className="description">
-                  {t(
-                    'Add another page to your order. Not available for the advanced package.',
-                  )}
-                </p>
-                <span className="price">{t('$5')}</span>
-              </label>
+              {chosenPack !== 'advanced-website-pack' && (
+                <label htmlFor="additional-page">
+                  <input
+                    type="checkbox"
+                    {...register('additionalFunctions')}
+                    value="additional-page"
+                    id="additional-page"
+                  />
+                  <span className="checkmark"></span>{' '}
+                  <span className="name">{t('Additional Page')}</span>{' '}
+                  <p className="description">
+                    {t(
+                      'Add another page to your order. Not available for the advanced package.',
+                    )}
+                  </p>
+                  <span className="price">{t('$5')}</span>
+                </label>
+              )}
               <div className="configuration-element">
                 <label htmlFor="loading-screen">
                   <input
@@ -472,12 +592,12 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                 />
               </div>
               <div className="configuration-element">
-                <label htmlFor="adavanced-interactions">
+                <label htmlFor="advanced-interactions">
                   <input
                     type="checkbox"
                     {...register('additionalFunctions')}
-                    value="adavanced-interactions"
-                    id="adavanced-interactions"
+                    value="advanced-interactions"
+                    id="advanced-interactions"
                   />
                   <span className="checkmark"></span>{' '}
                   <span className="name">{t('Advanced Interactions')}</span>
@@ -550,14 +670,41 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
               title={t('Configuration is ready')}
               sectionID="summary"
             >
-              <h3>$94</h3>
+              <h3>
+                {!location.pathname.includes('pl') && '$'}
+                {location.pathname.includes('pl')
+                  ? isNaN(configurationPrice)
+                    ? chosenPack === 'landing-page-pack'
+                      ? 90 * 5
+                      : chosenPack === 'business-website-pack'
+                      ? 150 * 5
+                      : chosenPack === 'advanced-website-pack'
+                      ? 230 * 5
+                      : 25 * 5
+                    : configurationPrice * 5
+                  : isNaN(configurationPrice)
+                  ? chosenPack === 'landing-page-pack'
+                    ? 90
+                    : chosenPack === 'business-website-pack'
+                    ? 150
+                    : chosenPack === 'advanced-website-pack'
+                    ? 230
+                    : 25
+                  : configurationPrice}
+                {location.pathname.includes('pl') && ' zł'}
+              </h3>
               <button
                 className="summary-button"
                 onClick={() => setShowSummary(true)}
               >
                 <TbNotes /> {t('Summary')}
               </button>
-              <PrimaryButton text={t('Ask for an offer')} type="submit" />
+
+              <PrimaryButton
+                // link="#"
+                text={t('Ask for an offer')}
+                type="submit"
+              />
             </ConfigurationSection>
           </form>
         </article>

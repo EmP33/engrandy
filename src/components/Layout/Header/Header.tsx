@@ -93,7 +93,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
                 <Link to="/portfolio/">Portfolio</Link>
               </li>
               <li>
-                <Link to="/builder/">{t('Builder')}</Link>
+                <Link to="/builder?pack=custom-pack">{t('Builder')}</Link>
               </li>
               <li>
                 <Link to="/contact/">{t('Contact')}</Link>
@@ -115,7 +115,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
               </li>
             </ul>
           </nav>
-          <PrimaryButton link="/builder/" text={t('Check the price')} />
+          <PrimaryButton link="/builder?pack=custom-pack" text={t('Check the price')} />
           <GiHamburgerMenu onClick={toggleDrawer} />
         </div>
       </div>

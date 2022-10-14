@@ -27,7 +27,10 @@ const HeroSection = () => {
           </h2>
           <div className="heading-actions">
             <PrimaryButton link="/contact/" text={t('Contact us')} />
-            <OutlineButton text={t('Go to the builder')} link="/builder/" />
+            <OutlineButton
+              text={t('Go to the builder')}
+              link="/builder?pack=custom-pack"
+            />
           </div>
         </div>
         <div className="hero-content__image">
