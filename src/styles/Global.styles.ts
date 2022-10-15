@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   main {
-    min-height: 35vh;
+    min-height: 36.5vh;
   }
 `;
 

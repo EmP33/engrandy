@@ -43,14 +43,5 @@ export const Wrapper = styled.section`
         font-size: 1.5rem;
       }
     }
-
-    & button {
-      padding: 0.3rem 3rem;
-
-      @media only screen and (max-width: 500px) {
-        padding: 0.3rem 3rem;
-        width: 100%;
-      }
-    }
   }
 `;

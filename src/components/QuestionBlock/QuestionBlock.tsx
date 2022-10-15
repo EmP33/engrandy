@@ -20,7 +20,9 @@ const QuestionBlock: React.FC<IProps> = ({ question, answer }) => {
         <h3>{t(question)}</h3>
         <BiChevronDown />
       </div>
-      <div className="hidden-content">{t(answer)}</div>
+      <div className="hidden-content">
+        <p>{t(answer)}</p>
+      </div>
     </Wrapper>
   );
 };

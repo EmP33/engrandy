@@ -87,8 +87,21 @@ export const Wrapper = styled.footer`
     border-top: 1px solid var(--font-color-3);
     text-align: center;
     color: var(--font-color-3);
-    padding: 2.5rem 0 0;
+    padding: 1.5rem 0 0;
     margin-top: 7.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--font-color-3);
+
+      & a {
+        color: #ddd;
+        text-decoration: none;
+      }
+    }
 
     @media only screen and (max-width: 900px) {
       margin-top: 4rem;

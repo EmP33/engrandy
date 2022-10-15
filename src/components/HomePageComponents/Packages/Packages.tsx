@@ -3,8 +3,17 @@ import { Link, useTranslation } from 'gatsby-plugin-react-i18next';
 import { Wrapper } from './Packages.styles';
 import { BsCheck } from 'react-icons/bs';
 
+import {
+  customPack,
+  advancedWebsitePack,
+  businessWebsitePack,
+  landingPagePack,
+} from '@/constants/orderPacks';
+
 const Packages = () => {
   const { t } = useTranslation();
+
+  console.log(landingPagePack);
 
   return (
     <Wrapper>
@@ -13,43 +22,17 @@ const Packages = () => {
       </h2>
       <div className="packages">
         <div className="packages__package" data-aos="fade-right">
-          <h3>{t('Web page')}</h3>
+          <h3>{t(landingPagePack.title)}</h3>
           <ul>
-            <li>
-              <BsCheck />
-              <span>{t('Professional website')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Adaptation to the phone version (RWD)')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Backup')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Technical support for 1 year')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Photos and icons with license')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Configuration of the contact form')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Privacy policy')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>1 {t('Page')}</span>
-            </li>
+            {landingPagePack.offer.map((el) => (
+              <li key={el}>
+                <BsCheck />
+                <span>{t(el)}</span>
+              </li>
+            ))}
           </ul>
           <div className="package__action">
-            <h4>{t('$90')}</h4>
+            <h4>{t(landingPagePack.price)}</h4>
             <PrimaryButton
               link="/builder?pack=landing-page-pack"
               text={t('Order now')}
@@ -57,43 +40,17 @@ const Packages = () => {
           </div>
         </div>
         <div className="packages__package" data-aos="fade-up">
-          <h3>{t('Web page')}</h3>
+          <h3>{t(businessWebsitePack.title)}</h3>
           <ul>
-            <li>
-              <BsCheck />
-              <span>{t('Professional website')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Adaptation to the phone version (RWD)')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Backup')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Technical support for 1 year')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Photos and icons with license')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Configuration of the contact form')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Privacy policy')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>3 {t('Pages')}</span>
-            </li>
+            {businessWebsitePack.offer.map((el) => (
+              <li key={el}>
+                <BsCheck />
+                <span>{t(el)}</span>
+              </li>
+            ))}
           </ul>
           <div className="package__action">
-            <h4>{t('$150')}</h4>
+            <h4>{t(businessWebsitePack.price)}</h4>
             <PrimaryButton
               link="/builder?pack=business-website-pack"
               text={t('Order now')}
@@ -101,43 +58,17 @@ const Packages = () => {
           </div>
         </div>
         <div className="packages__package" data-aos="fade-left">
-          <h3>{t('Web page')}</h3>
+          <h3>{t(advancedWebsitePack.title)}</h3>
           <ul>
-            <li>
-              <BsCheck />
-              <span>{t('Professional website')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Adaptation to the phone version (RWD)')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Backup')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Technical support for 1 year')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Photos and icons with license')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Configuration of the contact form')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>{t('Privacy policy')}</span>
-            </li>
-            <li>
-              <BsCheck />
-              <span>5 {t('Pages2')}</span>
-            </li>
+            {advancedWebsitePack.offer.map((el) => (
+              <li key={el}>
+                <BsCheck />
+                <span>{t(el)}</span>
+              </li>
+            ))}
           </ul>
           <div className="package__action">
-            <h4>{t('$230')}</h4>
+            <h4>{t(advancedWebsitePack.price)}</h4>
             <PrimaryButton
               link="/builder?pack=advanced-website-pack"
               text={t('Order now')}

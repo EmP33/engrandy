@@ -5,6 +5,7 @@ import { BsFacebook, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { AiFillInstagram } from 'react-icons/ai';
 import Cat from '@/assets/Cat';
 import { StaticImage } from 'gatsby-plugin-image';
+import PreviewSlider from './PreviewSlider';
 
 interface IProps {
   pack: string | null;
@@ -19,11 +20,15 @@ const Preview: React.FC<IProps> = ({
   contact,
   functions,
 }) => {
+  console.log({ pack, animations, contact, functions });
+  if (typeof functions === 'string') return '';
   return (
-    <Wrapper className="custom-pack" data-aos="fade-in">
+    <Wrapper className="custom-pack">
       <div className="navigation">
         <span>
-          {functions && functions?.includes('create-custom-elements') ? (
+          {functions &&
+          typeof functions !== 'boolean' &&
+          functions?.includes('create-custom-elements') ? (
             <StaticImage
               alt="custom logo"
               src="../../../assets/images/builder/CUSTOM.webp"
@@ -48,7 +53,23 @@ const Preview: React.FC<IProps> = ({
             <span>Page</span>
           </nav>
         )}
-        <GiHamburgerMenu />
+        <div>
+          {functions &&
+            typeof functions !== 'boolean' &&
+            functions.includes('switch-theme') && (
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="slider round"></span>
+              </label>
+            )}
+
+          {functions &&
+            typeof functions !== 'boolean' &&
+            functions.includes('change-language-possibility') && (
+              <span>EN</span>
+            )}
+          <GiHamburgerMenu />
+        </div>
       </div>
       <div className="hero">
         {pack !== 'custom-pack' && pack !== null && (
@@ -59,12 +80,14 @@ const Preview: React.FC<IProps> = ({
           </div>
         )}
         <div className="hero__content">
-          {functions && functions.includes('create-custom-elements') && (
-            <StaticImage
-              alt="custom logo"
-              src="../../../assets/images/builder/CUSTOM.webp"
-            />
-          )}
+          {functions &&
+            typeof functions !== 'boolean' &&
+            functions.includes('create-custom-elements') && (
+              <StaticImage
+                alt="custom logo"
+                src="../../../assets/images/builder/CUSTOM.webp"
+              />
+            )}
           <div className="heading"></div>
           <div className="subheading"></div>
         </div>
@@ -73,28 +96,33 @@ const Preview: React.FC<IProps> = ({
       <section className="section section--1">
         <h2>SECTION - 1</h2>
       </section>
+      {functions &&
+        typeof functions !== 'boolean' &&
+        functions?.includes('add-a-slider') && <PreviewSlider />}
       <section className="section section--2">
         <h2>SECTION - 2</h2>
       </section>
-      {functions && functions?.includes('reviews') && (
-        <Reviews>
-          <span>Reviews</span>
-          <div className="reviews">
-            <div className="review">
-              <div className="review-img"></div>
-              <div className="review-heading"></div>
+      {functions &&
+        typeof functions !== 'boolean' &&
+        functions?.includes('reviews') && (
+          <Reviews>
+            <span>Reviews</span>
+            <div className="reviews">
+              <div className="review">
+                <div className="review-img"></div>
+                <div className="review-heading"></div>
+              </div>
+              <div className="review">
+                <div className="review-img"></div>
+                <div className="review-heading"></div>
+              </div>
+              <div className="review">
+                <div className="review-img"></div>
+                <div className="review-heading"></div>
+              </div>
             </div>
-            <div className="review">
-              <div className="review-img"></div>
-              <div className="review-heading"></div>
-            </div>
-            <div className="review">
-              <div className="review-img"></div>
-              <div className="review-heading"></div>
-            </div>
-          </div>
-        </Reviews>
-      )}
+          </Reviews>
+        )}
       <section className="section section--3">
         <h2>SECTION - 3</h2>
       </section>
@@ -118,14 +146,16 @@ const Preview: React.FC<IProps> = ({
                   {contact?.includes('advanced-contact-form')
                     ? 'Advanced Contact'
                     : 'Basic Contact'}
-                  {functions && functions?.includes('social-media') && (
-                    <div className="socials">
-                      <BsFacebook />
-                      <AiFillInstagram />
-                      <BsTwitter />
-                      <BsYoutube />
-                    </div>
-                  )}
+                  {functions &&
+                    typeof functions !== 'boolean' &&
+                    functions?.includes('social-media') && (
+                      <div className="socials">
+                        <BsFacebook />
+                        <AiFillInstagram />
+                        <BsTwitter />
+                        <BsYoutube />
+                      </div>
+                    )}
                 </div>
 
                 <div className="contact-form__input"></div>
@@ -151,14 +181,16 @@ const Preview: React.FC<IProps> = ({
               {contact.includes('advanced-contact-form')
                 ? 'Advanced Contact'
                 : 'Basic Contact'}
-              {functions && functions?.includes('social-media') && (
-                <div className="socials">
-                  <BsFacebook />
-                  <AiFillInstagram />
-                  <BsTwitter />
-                  <BsYoutube />
-                </div>
-              )}
+              {functions &&
+                typeof functions !== 'boolean' &&
+                functions?.includes('social-media') && (
+                  <div className="socials">
+                    <BsFacebook />
+                    <AiFillInstagram />
+                    <BsTwitter />
+                    <BsYoutube />
+                  </div>
+                )}
             </div>
             <div className="contact-form__input"></div>
             <div className="contact-form__input"></div>
@@ -169,14 +201,16 @@ const Preview: React.FC<IProps> = ({
       )}
       <footer>
         <span>{pack || 'custom-pack'}</span>
-        {functions && functions?.includes('social-media') && (
-          <div className="socials">
-            <BsFacebook />
-            <AiFillInstagram />
-            <BsTwitter />
-            <BsYoutube />
-          </div>
-        )}
+        {functions &&
+          typeof functions !== 'boolean' &&
+          functions?.includes('social-media') && (
+            <div className="socials">
+              <BsFacebook />
+              <AiFillInstagram />
+              <BsTwitter />
+              <BsYoutube />
+            </div>
+          )}
         <span>&copy; 2022 Copyrights</span>
       </footer>
     </Wrapper>

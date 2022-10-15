@@ -69,7 +69,10 @@ const Footer = () => {
         <FaFacebookF />
       </div>
       <div className="copyright">
-        &copy; 2022 Engrandy. All rights reserved.
+        <span>
+          <Link to="/privacy-policy">{t('Privacy Policy')}</Link>
+        </span>
+        <span>&copy; 2022 Engrandy. All rights reserved.</span>
       </div>
     </Wrapper>
   );

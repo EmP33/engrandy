@@ -2,14 +2,15 @@ import React from 'react';
 import { Wrapper } from './SummaryDialog.styles';
 import { IoMdClose } from 'react-icons/io';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import OrderPreview from './OrderPreview';
 
 interface IProps {
   hideSummary: () => void;
   configuration: {
-    pack: string;
-    animations: string;
-    contact: string | string[];
-    functions: string | string[];
+    pack: string | null;
+    animations: string | null;
+    contact: string | string[] | null;
+    functions: string | string[] | null | boolean;
   };
 }
 
@@ -46,7 +47,7 @@ const SummaryDialog: React.FC<IProps> = ({ hideSummary, configuration }) => {
             </li>
             <li>
               {t('Additional Features')}:{' '}
-              {functions && functions.length !== 0
+              {functions && functions?.length !== 0
                 ? typeof functions === 'object'
                   ? functions.map((el) => t(el)).join(', ')
                   : t(functions)
@@ -54,6 +55,7 @@ const SummaryDialog: React.FC<IProps> = ({ hideSummary, configuration }) => {
             </li>
           </ul>
         </div>
+        <OrderPreview pack={pack} />
       </div>
     </Wrapper>
   );

@@ -22,7 +22,7 @@ const Navigation = () => {
           'other-function',
           'summary',
         ]}
-        offset={100}
+        offset={50}
         activeNavClass="is-active"
         scrollDuration="1000"
         headerBackground="true"

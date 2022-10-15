@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   .details {
     width: 80%;
     background: #fff;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 4rem;
     color: var(--color-secondary);
     display: grid;
     grid-template-columns: minmax(300px, 1fr) 1fr;

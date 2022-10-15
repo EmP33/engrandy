@@ -32,36 +32,46 @@ type Detail = {
   detailsSlug: null | string;
 };
 
-const prices = {
-  orderPackage: [
-    { name: 'custom-pack', price: 25 },
-    { name: 'landing-page-pack', price: 75 },
-    { name: 'business-website-pack', price: 135 },
-    { name: 'advanced-website-pack', price: 208 },
-  ],
-  animations: [
-    { name: 'basic-animations', price: 5 },
-    { name: 'advanced-animations', price: 25 },
-    { name: 'zero-animations', price: 0 },
-  ],
-  contact: [
-    { name: 'no-contact-form', price: 0 },
-    { name: 'basic-contact-form', price: 10 },
-    { name: 'advanced-contact-form', price: 17 },
-    { name: 'add-a-map', price: 5 },
-  ],
-  additionalFunctions: [
-    { name: 'social-media', price: 4 },
-    { name: 'additional-page', price: 5 },
-    { name: 'loading-screen', price: 10 },
-    { name: 'create-custom-elements', price: 10 },
-    { name: 'advanced-interactions', price: 10 },
-    { name: 'reviews', price: 10 },
-    { name: 'cms', price: 25 },
-  ],
-};
-
 const Builder: React.FC<{ location: any }> = ({ location }) => {
+  const [chosenPack, setChosenPack] = useState<null | string>('');
+  const prices = {
+    orderPackage: [
+      { name: 'custom-pack', price: 25 },
+      { name: 'landing-page-pack', price: 75 },
+      { name: 'business-website-pack', price: 135 },
+      { name: 'advanced-website-pack', price: 208 },
+    ],
+    animations: [
+      { name: 'basic-animations', price: 5 },
+      { name: 'advanced-animations', price: 25 },
+      { name: 'zero-animations', price: 0 },
+    ],
+    contact: [
+      { name: 'no-contact-form', price: 0 },
+      { name: 'basic-contact-form', price: 10 },
+      { name: 'advanced-contact-form', price: 17 },
+      { name: 'add-a-map', price: 5 },
+    ],
+    additionalFunctions: [
+      { name: 'social-media', price: 4 },
+      { name: 'additional-page', price: 5 },
+      { name: 'loading-screen', price: 10 },
+      { name: 'create-custom-elements', price: 10 },
+      { name: 'advanced-interactions', price: 10 },
+      { name: 'reviews', price: 10 },
+      { name: 'add-a-slider', price: 10 },
+      {
+        name: 'change-language-possibility',
+        price:
+          chosenPack === 'business-website-pack' ||
+          chosenPack === 'advanced-website-pack'
+            ? 20
+            : 5,
+      },
+      { name: 'switch-theme', price: 5 },
+      { name: 'cms', price: 25 },
+    ],
+  };
   const [showDetails, setShowDetails] = useState<Detail>({
     open: false,
     detailsSlug: null,
@@ -72,11 +82,12 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
     contactForm: null,
     additionalFunctions: null,
   });
-  const [chosenPack, setChosenPack] = useState<null | string>('');
+
   const [showSummary, setShowSummary] = useState(false);
   const { register, handleSubmit, watch } = useForm<Inputs>();
   const params = new URLSearchParams(location.search);
 
+  /* Calculating the price of the order. */
   const packPrice = prices?.orderPackage.find(
     (pack) => pack.name === watch('orderPackage'),
   )?.price;
@@ -110,7 +121,6 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
       : prices?.additionalFunctions.find(
           (cont) => cont.name === watch('additionalFunctions'),
         )?.price || 0;
-
   const configurationPrice =
     packPrice + animationsPrice + contactPrice + additionalFunctionsPrice;
 
@@ -118,6 +128,10 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
 
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
+  /**
+   * When the user clicks the button, the function will set the state of the showDetails object to false
+   * and the detailsSlug to null.
+   */
   const hideShowDetails = () => {
     setShowDetails({ open: false, detailsSlug: null });
   };
@@ -129,6 +143,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
   useEffect(() => {
     AOS.init();
 
+    /* Setting the state of the inputs based on the URL parameter. */
     if (params.get('pack') === 'advanced-website-pack') {
       setInputs({
         orderPackage: 'advanced-website-pack',
@@ -643,6 +658,98 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                       detailsSlug: location.pathname.includes('pl')
                         ? 'add-reviews-pl'
                         : 'add-reviews',
+                    })
+                  }
+                />
+              </div>
+              <div className="configuration-element">
+                <label htmlFor="add-a-slider">
+                  <input
+                    type="checkbox"
+                    {...register('additionalFunctions')}
+                    value="add-a-slider"
+                    id="add-a-slider"
+                  />
+                  <span className="checkmark"></span>{' '}
+                  <span className="name">{t('Add a Slider')}</span>
+                  <p className="description">
+                    {t(
+                      'Dodaj element Slider, aby zwiększyć doświadczenia osób odwiedzających stronę',
+                    )}
+                  </p>
+                  <span className="price">{t('$10')}</span>
+                </label>
+                <IoIosInformationCircleOutline
+                  onClick={() =>
+                    setShowDetails({
+                      open: true,
+                      detailsSlug: location.pathname.includes('pl')
+                        ? 'add-a-slider-pl'
+                        : 'add-a-slider',
+                    })
+                  }
+                />
+              </div>
+              <div className="configuration-element">
+                <label htmlFor="change-language-possibility">
+                  <input
+                    type="checkbox"
+                    {...register('additionalFunctions')}
+                    value="change-language-possibility"
+                    id="change-language-possibility"
+                  />
+                  <span className="checkmark"></span>{' '}
+                  <span className="name">
+                    {t('Add Change Language Possibility')}
+                  </span>
+                  <p className="description">
+                    {t(
+                      'Make your website multilingual (price includes adding one additional language).',
+                    )}
+                  </p>
+                  <span className="price">
+                    {chosenPack === 'business-website-pack'
+                      ? t('$20')
+                      : chosenPack === 'advanced-website-pack'
+                      ? t('$20')
+                      : t('$5')}
+                  </span>
+                </label>
+                <IoIosInformationCircleOutline
+                  onClick={() =>
+                    setShowDetails({
+                      open: true,
+                      detailsSlug: location.pathname.includes('pl')
+                        ? 'change-language-possibility-pl'
+                        : 'change-language-possibility',
+                    })
+                  }
+                />
+              </div>
+              <div className="configuration-element">
+                <label htmlFor="switch-theme">
+                  <input
+                    type="checkbox"
+                    {...register('additionalFunctions')}
+                    value="switch-theme"
+                    id="switch-theme"
+                  />
+                  <span className="checkmark"></span>{' '}
+                  <span className="name">{t('Add theme change')}</span>
+                  <p className="description">
+                    {t(
+                      'Add the ability to change from light to dark theme and vice versa.',
+                    )}
+                  </p>
+                  <span className="price">{t('$5')}</span>
+                </label>
+                <IoIosInformationCircleOutline
+                  onClick={() =>
+                    setShowDetails({
+                      open: true,
+                      detailsSlug: location.pathname.includes('pl')
+                        ? 'switch-theme-pl'
+                        : 'switch-theme',
                     })
                   }
                 />

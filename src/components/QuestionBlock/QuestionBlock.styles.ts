@@ -29,16 +29,26 @@ export const Wrapper = styled.div<{ showDetails: boolean }>`
     }
     & svg {
       font-size: 1.6rem;
+      transform: ${({ showDetails }) =>
+        showDetails ? 'rotate(0)' : 'rotate(-90deg)'};
+      transition: all 0.15s linear;
     }
   }
 
   .hidden-content {
     display: block;
-    padding: ${({ showDetails }) => (showDetails ? '1rem 1.5rem' : '0')};
     color: var(--font-color-2);
     font-size: 15px;
-    max-height: ${({ showDetails }) => (showDetails ? '300px' : 0)};
+    max-height: ${({ showDetails }) => (showDetails ? '100px' : 0)};
     overflow: hidden;
     transition: max-height 0.3s ease-in, padding 0.4s linear;
+
+    @media only screen and (max-width: 600px) {
+      overflow: auto;
+    }
+
+    & > p {
+      padding: 1rem 1.5rem;
+    }
   }
 `;

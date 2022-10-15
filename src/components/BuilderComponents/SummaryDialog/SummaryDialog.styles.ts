@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
     padding: 1.5rem;
     color: var(--color-secondary);
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     row-gap: 1rem;
 
@@ -41,6 +42,7 @@ export const Wrapper = styled.div`
     }
 
     &__heading {
+      grid-column: 1/-1;
       display: flex;
       justify-content: space-between;
       align-items: center;
