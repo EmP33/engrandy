@@ -808,7 +808,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
               </button>
 
               <PrimaryButton
-                // link="#"
+                link="/order/"
                 text={t('Ask for an offer')}
                 type="submit"
               />

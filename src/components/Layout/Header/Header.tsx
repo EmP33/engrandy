@@ -32,7 +32,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
       <div className="notification-bar">
         <div className="notification-bar__container">
           {t('The website cost starts from $25')}{' '}
-          <Link to="">{t('Check the offer')}</Link>
+          <Link to="/builder?pack=custom-pack">{t('Check the offer')}</Link>
         </div>
       </div>
       <div className="appbar">
@@ -115,7 +115,10 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
               </li>
             </ul>
           </nav>
-          <PrimaryButton link="/builder?pack=custom-pack" text={t('Check the price')} />
+          <PrimaryButton
+            link="/builder?pack=custom-pack"
+            text={t('Check the price')}
+          />
           <GiHamburgerMenu onClick={toggleDrawer} />
         </div>
       </div>
