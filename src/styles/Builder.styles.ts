@@ -55,5 +55,16 @@ export const Wrapper = styled.div`
       display: grid;
       row-gap: 0.75rem;
     }
+
+    & button[type='submit'] {
+      background-color: var(--color-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      padding: 1rem 1rem;
+      color: var(--color-secondary);
+    }
   }
 `;

@@ -4,6 +4,8 @@ import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { MdPayments } from 'react-icons/md';
 import { TbWriting } from 'react-icons/tb';
 import { RiSlideshowLine } from 'react-icons/ri';
+import Delivery from '@/assets/Delivery';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const Process = () => {
   const { t } = useTranslation();
@@ -17,7 +19,12 @@ const Process = () => {
             data-number={1}
             data-aos="fade-up"
           >
-            <MdPayments />
+            <div className="image-wrapper">
+              <StaticImage
+                src="../../../assets/images/homePage/pay.webp"
+                alt="process icon"
+              />
+            </div>
             <h3>{t('You order and pay for the service')}</h3>
             <p>
               {t(
@@ -30,7 +37,12 @@ const Process = () => {
             data-number={2}
             data-aos="fade-up"
           >
-            <TbWriting />
+            <div className="image-wrapper">
+              <StaticImage
+                src="../../../assets/images/homePage/note.webp"
+                alt="process icon"
+              />
+            </div>
             <h3>{t('Information gathering')}</h3>
             <p>
               {t(
@@ -43,7 +55,12 @@ const Process = () => {
             data-number={3}
             data-aos="fade-up"
           >
-            <RiSlideshowLine />
+            <div className="image-wrapper">
+              <StaticImage
+                src="../../../assets/images/homePage/food-delivery.webp"
+                alt="process icon"
+              />
+            </div>
             <h3>{t('Delivery of the order')}</h3>
             <p>
               {t(

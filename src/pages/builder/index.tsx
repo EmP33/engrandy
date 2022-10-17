@@ -126,7 +126,13 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
 
   const { t } = useTranslation();
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    localStorage.setItem(
+      'configuration',
+      JSON.stringify({ ...data, totalAmount: configurationPrice }),
+    );
+    navigate(`/order/`);
+  };
 
   /**
    * When the user clicks the button, the function will set the state of the showDetails object to false
@@ -801,17 +807,14 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                 {location.pathname.includes('pl') && ' zł'}
               </h3>
               <button
+                type="button"
                 className="summary-button"
                 onClick={() => setShowSummary(true)}
               >
                 <TbNotes /> {t('Summary')}
               </button>
 
-              <PrimaryButton
-                link="/order/"
-                text={t('Ask for an offer')}
-                type="submit"
-              />
+              <button type="submit">{t('Ask for an offer')}</button>
             </ConfigurationSection>
           </form>
         </article>

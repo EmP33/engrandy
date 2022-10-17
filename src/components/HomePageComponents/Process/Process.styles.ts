@@ -64,14 +64,16 @@ export const Wrapper = styled.section`
           color: rgba(28, 231, 131, 0.1);
         }
 
-        & svg {
-          font-size: 7rem;
-          color: var(--color-primary-dark);
+        .image-wrapper {
+          width: 100px;
+          height: 100px;
           grid-row: span 2;
-
           @media only screen and (max-width: 600px) {
             grid-row: span 1;
           }
+        }
+
+        & svg {
         }
 
         & h3 {

@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div<{ showDetails: boolean }>`
-  border: 1px solid var(--font-color-3);
-  border-radius: 5px;
+  border-bottom: 1px solid #ddd;
   display: grid;
 
   .question-answer {
@@ -10,13 +9,12 @@ export const Wrapper = styled.div<{ showDetails: boolean }>`
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1.5rem 0.5rem;
     cursor: pointer;
     transition: all 0.1s linear;
     background: ${({ showDetails }) =>
       showDetails ? 'var(--color-primary)' : 'transparent'};
-    color: ${({ showDetails }) =>
-      showDetails ? 'var(--color-secondary)' : 'var(--font-color-3)'};
+    color: var(--color-secondary);
 
     &:hover {
       background-color: var(--color-primary);
@@ -37,7 +35,7 @@ export const Wrapper = styled.div<{ showDetails: boolean }>`
 
   .hidden-content {
     display: block;
-    color: var(--font-color-2);
+    color: var(--font-color-1);
     font-size: 15px;
     max-height: ${({ showDetails }) => (showDetails ? '100px' : 0)};
     overflow: hidden;
@@ -48,7 +46,7 @@ export const Wrapper = styled.div<{ showDetails: boolean }>`
     }
 
     & > p {
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 1.5rem;
     }
   }
 `;

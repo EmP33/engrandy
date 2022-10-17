@@ -6,7 +6,8 @@ interface IProps {
   text: string;
   dark?: boolean;
   type?: string;
-  link: string;
+  link?: string;
+  handleClick?: () => void;
 }
 
 const PrimaryButton: React.FC<IProps> = ({
@@ -14,17 +15,27 @@ const PrimaryButton: React.FC<IProps> = ({
   dark,
   type = 'button',
   link,
+  handleClick,
 }) => {
   return (
-    <PrimaryButtonStyle dark={dark} type={type}>
-      <Link to={link || '/'}>
+    <PrimaryButtonStyle dark={dark} type={type} onClick={handleClick}>
+      {link ? (
+        <Link to={link || '/'}>
+          <div className="wrapper">
+            <div className="inside-wrapper">
+              <span>{text}</span>
+              <span>{text}</span>
+            </div>
+          </div>
+        </Link>
+      ) : (
         <div className="wrapper">
           <div className="inside-wrapper">
             <span>{text}</span>
             <span>{text}</span>
           </div>
         </div>
-      </Link>
+      )}
     </PrimaryButtonStyle>
   );
 };

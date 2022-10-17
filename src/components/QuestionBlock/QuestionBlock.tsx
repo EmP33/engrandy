@@ -11,6 +11,7 @@ interface IProps {
 const QuestionBlock: React.FC<IProps> = ({ question, answer }) => {
   const { t } = useTranslation();
   const [showDetails, setShowDetails] = useState(false);
+
   return (
     <Wrapper showDetails={showDetails}>
       <div

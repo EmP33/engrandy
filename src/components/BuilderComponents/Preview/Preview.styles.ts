@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`
-  width: 70%;
-  height: 60%;
+export const Wrapper = styled.div<{ theme: 'light' | 'dark'; type?: string }>`
+  width: ${({ type }) => (type === 'order-type' ? '90%' : '70%')};
+  height: ${({ type }) => (type === 'order-type' ? '100%' : '60%')};
   border: 3px solid #ddd;
   border-radius: 5px;
   background: #fff;
@@ -14,22 +14,22 @@ export const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`
 
   @media only screen and (max-width: 1400px) {
     width: 90%;
-    height: 50%;
+    height: ${({ type }) => (type === 'order-type' ? '90%' : '50%')};
   }
   @media only screen and (max-width: 1200px) {
-    height: 40%;
+    height: ${({ type }) => (type === 'order-type' ? '80%' : '40%')};
   }
   @media only screen and (max-width: 900px) {
-    width: 60%;
+    width: ${({ type }) => (type === 'order-type' ? '90%' : '60%')};
     height: 80%;
   }
   @media only screen and (max-width: 700px) {
-    width: 85%;
+    width: ${({ type }) => (type === 'order-type' ? '95%' : '85%')};
     height: 80%;
   }
   @media only screen and (max-width: 450px) {
     width: 95%;
-    height: 80%;
+    height: ${({ type }) => (type === 'order-type' ? '60%' : '80%')};
   }
 
   /* width */

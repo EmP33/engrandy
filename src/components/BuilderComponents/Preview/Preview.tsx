@@ -12,6 +12,7 @@ interface IProps {
   animations: string | null;
   contact: string[] | string | null;
   functions: string[] | string | boolean | null;
+  type?: string;
 }
 
 const Preview: React.FC<IProps> = ({
@@ -19,11 +20,12 @@ const Preview: React.FC<IProps> = ({
   animations,
   contact,
   functions,
+  type,
 }) => {
   console.log({ pack, animations, contact, functions });
   if (typeof functions === 'string') return '';
   return (
-    <Wrapper className="custom-pack">
+    <Wrapper className="custom-pack" type={type}>
       <div className="navigation">
         <span>
           {functions &&
