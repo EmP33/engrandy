@@ -64,24 +64,45 @@ export const Wrapper = styled.div`
         margin: 1rem auto;
       }
 
-      &-details {
-        margin-bottom: 2rem;
+      & > h3 {
+        font-weight: 300;
+        color: #666;
+        font-size: 1.6rem;
+        margin: 3rem 0 1rem;
       }
 
-      & > h3 {
+      &-heading {
         margin: 3rem 0 1rem;
-        font-size: 1.6rem;
-        font-weight: 300;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         text-transform: uppercase;
         color: #666;
+        font-size: 1.6rem;
+        column-gap: 0.5rem;
 
         @media only screen and (max-width: 600px) {
           margin: 1rem 0;
         }
 
+        & > h3 {
+          font-weight: 300;
+        }
         & span {
           font-weight: bold;
         }
+
+        @media only screen and (max-width: 900px) {
+          font-size: 1.4rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+      }
+
+      &-details {
+        margin-bottom: 2rem;
       }
 
       form {

@@ -18,7 +18,7 @@ export const Wrapper = styled.section`
   & h2 {
     font-size: 1.8rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 
     @media only screen and (max-width: 600px) {
       font-size: 1.5rem;
@@ -116,6 +116,12 @@ export const Wrapper = styled.section`
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
+    }
+
+    .configuration-result {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
     }
 
     .name {

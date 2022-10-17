@@ -54,7 +54,6 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
     ],
     additionalFunctions: [
       { name: 'social-media', price: 4 },
-      { name: 'additional-page', price: 5 },
       { name: 'loading-screen', price: 10 },
       { name: 'create-custom-elements', price: 10 },
       { name: 'advanced-interactions', price: 10 },
@@ -536,24 +535,6 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
                 />
               </div>
 
-              {chosenPack !== 'advanced-website-pack' && (
-                <label htmlFor="additional-page">
-                  <input
-                    type="checkbox"
-                    {...register('additionalFunctions')}
-                    value="additional-page"
-                    id="additional-page"
-                  />
-                  <span className="checkmark"></span>{' '}
-                  <span className="name">{t('Additional Page')}</span>{' '}
-                  <p className="description">
-                    {t(
-                      'Add another page to your order. Not available for the advanced package.',
-                    )}
-                  </p>
-                  <span className="price">{t('$5')}</span>
-                </label>
-              )}
               <div className="configuration-element">
                 <label htmlFor="loading-screen">
                   <input
@@ -783,29 +764,50 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
               title={t('Configuration is ready')}
               sectionID="summary"
             >
-              <h3>
-                {!location.pathname.includes('pl') && '$'}
-                {location.pathname.includes('pl')
-                  ? isNaN(configurationPrice)
+              <span>
+                {t(
+                  'Selecting additional functions may extend the waiting time for the order.',
+                )}
+              </span>
+              <div className="configuration-result">
+                <h3>
+                  {!location.pathname.includes('pl') && '$'}
+                  {location.pathname.includes('pl')
+                    ? isNaN(configurationPrice)
+                      ? chosenPack === 'landing-page-pack'
+                        ? 90 * 5
+                        : chosenPack === 'business-website-pack'
+                        ? 150 * 5
+                        : chosenPack === 'advanced-website-pack'
+                        ? 230 * 5
+                        : 25 * 5
+                      : configurationPrice * 5
+                    : isNaN(configurationPrice)
                     ? chosenPack === 'landing-page-pack'
-                      ? 90 * 5
+                      ? 90
                       : chosenPack === 'business-website-pack'
-                      ? 150 * 5
+                      ? 150
                       : chosenPack === 'advanced-website-pack'
-                      ? 230 * 5
-                      : 25 * 5
-                    : configurationPrice * 5
-                  : isNaN(configurationPrice)
-                  ? chosenPack === 'landing-page-pack'
-                    ? 90
+                      ? 230
+                      : 25
+                    : configurationPrice}
+                  {location.pathname.includes('pl') && ' zł'}
+                </h3>
+                <h3>
+                  {watch('additionalFunctions') &&
+                  watch('additionalFunctions')?.length > 0
+                    ? '>'
+                    : ''}
+                  {chosenPack === 'landing-page-pack'
+                    ? 3
                     : chosenPack === 'business-website-pack'
-                    ? 150
+                    ? 5
                     : chosenPack === 'advanced-website-pack'
-                    ? 230
-                    : 25
-                  : configurationPrice}
-                {location.pathname.includes('pl') && ' zł'}
-              </h3>
+                    ? 10
+                    : 1}{' '}
+                  {chosenPack === 'custom-pack' ? t('Day') : t('Days')}
+                </h3>
+              </div>
               <button
                 type="button"
                 className="summary-button"

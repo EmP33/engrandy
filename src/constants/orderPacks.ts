@@ -27,6 +27,7 @@ export const landingPagePack = {
     '1 page',
     '1 slider',
     'Privacy policy',
+    'Original design',
   ],
   price: '$90',
 };
@@ -47,6 +48,7 @@ export const businessWebsitePack = {
     'Up to 5 pages',
     '1 slider',
     'Privacy policy',
+    'Original design',
   ],
   price: '$150',
 };
@@ -67,6 +69,8 @@ export const advancedWebsitePack = {
     'Unlimited pages',
     '1 slider',
     'Privacy policy',
+    'Original design',
+    'Dynamic subpages',
   ],
   price: '$230',
 };

@@ -91,31 +91,47 @@ const Order = ({ location }) => {
           />
         </section>
         <section className="summary">
-          <h3>
-            {t(orderPackage)}: {!location.pathname.includes('pl') && '$'}
-            <span>
-              {location.pathname.includes('pl')
-                ? !totalAmount
+          <div className="summary-heading">
+            <h3>
+              {t(orderPackage)}:{' '}
+              <span>
+                {!location.pathname.includes('pl') && '$'}
+                {location.pathname.includes('pl')
+                  ? !totalAmount
+                    ? orderPackage === 'landing-page-pack'
+                      ? 90 * 5
+                      : orderPackage === 'business-website-pack'
+                      ? 150 * 5
+                      : orderPackage === 'advanced-website-pack'
+                      ? 230 * 5
+                      : 25 * 5
+                    : totalAmount * 5
+                  : !totalAmount
                   ? orderPackage === 'landing-page-pack'
-                    ? 90 * 5
+                    ? 90
                     : orderPackage === 'business-website-pack'
-                    ? 150 * 5
+                    ? 150
                     : orderPackage === 'advanced-website-pack'
-                    ? 230 * 5
-                    : 25 * 5
-                  : totalAmount * 5
-                : !totalAmount
-                ? orderPackage === 'landing-page-pack'
-                  ? 90
-                  : orderPackage === 'business-website-pack'
-                  ? 150
-                  : orderPackage === 'advanced-website-pack'
-                  ? 230
-                  : 25
-                : totalAmount}
-              {location.pathname.includes('pl') && ' zł'}
+                    ? 230
+                    : 25
+                  : totalAmount}
+                {location.pathname.includes('pl') && ' zł'}
+              </span>
+            </h3>{' '}
+            <span>
+              {additionalFunctions && additionalFunctions?.length > 0
+                ? '>'
+                : ''}
+              {orderPackage === 'landing-page-pack'
+                ? 3
+                : orderPackage === 'business-website-pack'
+                ? 5
+                : orderPackage === 'advanced-website-pack'
+                ? 10
+                : 1}{' '}
+              {orderPackage === 'custom-pack' ? t('Day') : t('Days')}
             </span>
-          </h3>
+          </div>
           <div className="summary-details" data-aos="slide-up">
             <QuestionBlock
               question={t('Selected package')}

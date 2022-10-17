@@ -14,3 +14,7 @@ The Landing Page Package is the perfect option for small businesses or personal 
 - Technical support for 1 year
 - Backup
 - 1 page
+- Original design
+- 1 slider
+- Privacy policy
+- Basic animations

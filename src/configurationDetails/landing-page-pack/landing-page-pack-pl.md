@@ -14,3 +14,7 @@ Pakiet Landing Page jest idealną opcją dla małych biznesów lub stron persona
 - Kopia zapasowa
 - Pomoc techniczna na 1 rok
 - 1 strona
+- Oryginalny design
+- 1 slider
+- Polityka prywatności
+- Podstawowe animacje

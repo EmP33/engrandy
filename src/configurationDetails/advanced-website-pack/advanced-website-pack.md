@@ -1,13 +1,23 @@
 ---
 title: Advanced Website Pack
 slug: advanced-website-pack
+preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665995580/ruh_yejmld.webm
 ---
 
-Pakiet zaawansowany gwarantuje Ci najwyższą jakość jaką jesteśmy w stanie zaoferować.
+By choosing an advanced package, you will get everything that is included in the previous packages as well as additional functions.
 
-- Profesjonalna strona internetowa
-- Dostosowanie do wersji na telefon (RWD)
-- Lepsze pozycjonowanie w wynikach wyszukiwania (SEO)
-- Kopia zapasowa
-- Pomoc techniczna na 1 rok
-- 5 stron
+The perfect option if you need an advanced website with an undefined number of subpages.
+
+- Professional website
+- Adaptation to the phone version (RWD)
+- Better position in search results (SEO)
+- Secure advanced contact form
+- No limit to the number of sections
+- Technical support for 1 year
+- Backup
+- Unlimited number of subpages
+- Basic animations
+- Privacy Policy
+- 1 slider
+- Original design
+- Dynamic subpages

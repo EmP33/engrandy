@@ -111,6 +111,12 @@ const config: GatsbyConfig = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-use-query-params`,
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        icon: 'src/assets/images/E.png',
+      },
+    },
   ],
   jsxRuntime: `automatic`,
 };

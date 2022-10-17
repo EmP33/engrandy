@@ -1,10 +1,12 @@
 ---
 title: Business Website Pack
 slug: business-website-pack
-preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665567479/67696ee8-9e78-4d27-b260-a6b32a4a4a9b_cytlvl.webm
+preview: https://res.cloudinary.com/dtbemnmn4/video/upload/v1665995693/bor_xqrn89.webm
 ---
 
-The business package is a great option if you need a more advanced website.
+The business package is a great option if you need a more advanced website. Perfect package if you need website with multiple subpages.
+
+Each of the subpages has an unlimited number of sections, and on each of the subpages we use a selected package of animations and functions.
 
 - Professional website
 - Adaptation to the phone version (RWD)
@@ -14,3 +16,7 @@ The business package is a great option if you need a more advanced website.
 - Technical support for 1 year
 - Backup
 - 5 page
+- Basic animations
+- Privacy Policy
+- 1 slider
+- Original design
