@@ -73,13 +73,13 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer, location }) => {
                 }
               >
                 <div className="dropdown__content">
-                  <Link to="">
+                  <Link to="/services/creating-web-applications">
                     <span>{t('Creating web applications')}</span>
                     <span>
                       {t('Web applications based on React or Gatsby')}
                     </span>
                   </Link>
-                  <Link to="">
+                  <Link to="/services/creating-web-applications">
                     <span> {t('Creating SPA websites')}</span>
                     <span>
                       {t(
@@ -87,7 +87,7 @@ const Drawer: React.FC<IProps> = ({ toggleDrawer, showDrawer, location }) => {
                       )}
                     </span>
                   </Link>
-                  <Link to="">
+                  <Link to="/services/creating-web-applications">
                     <span>{t('Creating portfolio pages')}</span>
                     <span>
                       {t(

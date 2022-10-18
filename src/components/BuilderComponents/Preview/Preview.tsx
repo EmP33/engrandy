@@ -22,7 +22,6 @@ const Preview: React.FC<IProps> = ({
   functions,
   type,
 }) => {
-  console.log({ pack, animations, contact, functions });
   if (typeof functions === 'string') return '';
   return (
     <Wrapper className="custom-pack" type={type}>

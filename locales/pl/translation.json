@@ -180,5 +180,17 @@
   "Day": "dzień",
   "Days": "dni",
   "Dynamic subpages": "Dynamiczne podstrony",
-  "Original design": "Oryginalny design"
+  "Original design": "Oryginalny design",
+  "Creating Web Applications": "Tworzenie aplikacji webowych",
+  "We build our websites using new technologies to ensure speed and efficiency in the positioning of our websites. We use well-known languages, frameworks and libraries such as JavaScript, React or Gatsby.": "Budujemy nasze strony używając do tego nowych technologi by zapewnić szybkość i skuteczność w pozycjonowaniu naszych stron. Używamy znanych języków,frameworków i biblotek takich jak JavaScript, React czy Gatsby.",
+  "Why is it worth choosing our service?": "Dlaczego warto wybrać naszą usługę?",
+  "We use the React.js library to create our applications and websites. It is a JavaScript library used in web development for interactive elements on a site. One of the biggest advantages of using the React.js framework in a project is the reduction of time and costs, thanks to which we can deliver your product in a faster and cheaper way.": "Do tworzenia naszych aplikacji i stron używamy bibloteki React.js. Jest to biblioteka języka JavaScript używana w tworzeniu stron internetowych do interaktywnych elementów w witrynie. Jedną z największych zalet korzystania z frameworka React.js w projekcie jest redukcja czasu i kosztów dzięki czemu możemy w szybszy i tańszy sposób dostarczyc twój produkt.",
+  "SEO friendly": "Przyjazny dla SEO",
+  "Easy to use": "Łatwy w użyciu",
+  "Responsive": "Responsywny",
+  "Pages created with React technology are much faster than others. Higher loading speed does not discourage visitors, and search engines position our website better. Web applications created with React.js are easy to read and index by Google bots.": "Strony tworzone za pomocą technologii React są znacznie szybsze niż inne. Większa prędkość ładowania nie zniechęca odwiedzających, a wyszukiwarki lepiej pozycjonują naszą witrynę. Aplikacje internetowe utworzone w React.js są łatwe do odczytania i indeksowania przez boty Google.",
+  "React is easy to use and the code you create is clear and readable. With a component-based approach and other useful features, React.js helps you build professional web applications and supports them.": "React jest łatwy w użyciu, a stworzony kod jest jest klarowny i czytelny. Dzięki podejściu opartemu na komponentach i innym przydatnym funkcjom, React.js pomaga w budowaniu profesjonalnych aplikacji internetowych i wspiera je.",
+  "React.js allows you to create fully responsive, fast and useful websites tailored to the needs of users. Your web application will be responsive and will quickly adapt to any screen size.": "React.js umożliwia tworzenie w pełni responsywnych, szybkich i użytecznych stron internetowych dostosowanych do potrzeb użytkowników. Twoja aplikacja internetowa będzie responsywna i szybko dostosuje się do każdego rozmiaru ekranu.",
+  "Professional websites - Create your own website": "Profesjonalne strony www - Stwórz własną stronę internetową",
+  "Your configuration has been sent, we will contact you shortly": "Twoja konfiguracja została wysłana, wkrótce się z tobą skontaktujemy"
 }

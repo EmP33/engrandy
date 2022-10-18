@@ -24,8 +24,7 @@ const OurValues: React.FC<{ location: any }> = ({ location }) => {
 };
 
 export const Head = () => {
-  const { t } = useTranslation();
-  return <Seo title={t('Our values')} />;
+  return <Seo />;
 };
 
 export const query = graphql`

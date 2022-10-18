@@ -10,7 +10,6 @@ import {
 } from '@/constants/orderPacks';
 
 const OrderPreview: React.FC<{ pack: string }> = ({ pack }) => {
-  console.log(pack);
   const { t } = useTranslation();
   return (
     <Wrapper>

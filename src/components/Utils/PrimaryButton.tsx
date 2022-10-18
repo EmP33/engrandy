@@ -8,6 +8,7 @@ interface IProps {
   type?: string;
   link?: string;
   handleClick?: () => void;
+  disabled?: boolean;
 }
 
 const PrimaryButton: React.FC<IProps> = ({
@@ -16,9 +17,15 @@ const PrimaryButton: React.FC<IProps> = ({
   type = 'button',
   link,
   handleClick,
+  disabled,
 }) => {
   return (
-    <PrimaryButtonStyle dark={dark} type={type} onClick={handleClick}>
+    <PrimaryButtonStyle
+      disabled={disabled}
+      dark={dark}
+      type={type}
+      onClick={handleClick}
+    >
       {link ? (
         <Link to={link || '/'}>
           <div className="wrapper">

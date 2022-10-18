@@ -37,15 +37,21 @@ const Footer = () => {
           <h3>{t('Services')}</h3>
           <ul>
             <li>
-              <Link to="/">{t('Creating web applications')}</Link>
+              <Link to="/services/creating-web-applications">
+                {t('Creating web applications')}
+              </Link>
             </li>
 
             <li>
-              <Link to="/">{t('Creating SPA websites')} </Link>
+              <Link to="/services/creating-web-applications">
+                {t('Creating SPA websites')}{' '}
+              </Link>
             </li>
 
             <li>
-              <Link to="/">{t('Creating portfolio pages')}</Link>
+              <Link to="/services/creating-web-applications">
+                {t('Creating portfolio pages')}
+              </Link>
             </li>
           </ul>
         </div>
@@ -63,10 +69,10 @@ const Footer = () => {
         </div>
       </div>
       <div className="socials">
+        {/* <FaFacebookF />
         <FaFacebookF />
         <FaFacebookF />
-        <FaFacebookF />
-        <FaFacebookF />
+        <FaFacebookF /> */}
       </div>
       <div className="copyright">
         <span>

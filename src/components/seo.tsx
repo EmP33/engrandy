@@ -1,14 +1,16 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 
 interface Props {
   description?: string;
-  title?: string;
+  title?: string | undefined;
   children?: JSX.Element;
 }
 
 const Seo: React.FC<Props> = ({ description, title, children }) => {
+  const { t } = useTranslation();
   const { site } = useStaticQuery(
     graphql`
       query MyQuery {
@@ -28,7 +30,7 @@ const Seo: React.FC<Props> = ({ description, title, children }) => {
 
   return (
     <>
-      <title>{defaultTitle ? `${defaultTitle} | ${title}` : title}</title>
+      <title>{!title ? t(defaultTitle) : t(title)}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />

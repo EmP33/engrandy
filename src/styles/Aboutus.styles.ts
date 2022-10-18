@@ -74,9 +74,6 @@ export const Wrapper = styled.article`
       display: flex;
       align-items: center;
       justify-content: center;
-
-      & svg {
-      }
     }
   }
 `;

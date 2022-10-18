@@ -135,6 +135,10 @@ export const Wrapper = styled.div`
           justify-self: end;
           padding: 1rem 3rem;
         }
+
+        #orderField {
+          display: none;
+        }
       }
     }
   }

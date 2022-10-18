@@ -3,6 +3,7 @@ import { Wrapper } from '@/styles/PrivacyPolicy.styles';
 import React from 'react';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import Seo from '@/components/seo';
 
 const PrivacyPolicy: React.FC<{ location: any }> = ({ location }) => {
   const { t } = useTranslation();
@@ -33,7 +34,7 @@ const PrivacyPolicy: React.FC<{ location: any }> = ({ location }) => {
         </p>
         <p>
           {t(
-            "You can visit our Website without disclosing your identity to us or providing any information that could identify you as a specific, identifiable person. However, if you want to use certain functions of the Website, or you want to receive our newsletter, or provide other information by filling in the form, you can provide us with your personal data, such as e-mail address, name, surname, city where you live, company, organization, Phone number. You can opt out of providing your personal information to us, but then you may not be able to use some of the Site's features. For example, we will not be able to send you our Newsletter or contact you directly on the Site. Users who are not sure which information is mandatory can contact us at engrady@gmail.com.",
+            "You can visit our Website without disclosing your identity to us or providing any information that could identify you as a specific, identifiable person. However, if you want to use certain functions of the Website, or you want to receive our newsletter, or provide other information by filling in the form, you can provide us with your personal data, such as e-mail address, name, surname, city where you live, company, organization, Phone number. You can opt out of providing your personal information to us, but then you may not be able to use some of the Site's features. For example, we will not be able to send you our Newsletter or contact you directly on the Site. Users who are not sure which information is mandatory can contact us at help.engrandy@gmail.com.",
           )}
         </p>
         <h3>{t('Your rights:')}</h3>
@@ -83,13 +84,15 @@ const PrivacyPolicy: React.FC<{ location: any }> = ({ location }) => {
         <h3>{t('Contact info:')}</h3>
         <p>
           {t(
-            'If you wish to contact us for more information on this Privacy Policy or in any matter relating to your rights and personal data, you can send an e-mail to engrady@gmail.com.',
+            'If you wish to contact us for more information on this Privacy Policy or in any matter relating to your rights and personal data, you can send an e-mail to help.engrandy@gmail.com.',
           )}
         </p>
       </Wrapper>
     </Layout>
   );
 };
+
+export const Head = () => <Seo />;
 
 export const query = graphql`
   query ($language: String!) {

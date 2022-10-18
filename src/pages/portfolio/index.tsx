@@ -63,7 +63,7 @@ const Portfolio: React.FC<{ location: any }> = ({ location }) => {
 };
 
 export const Head = () => {
-  return <Seo title="Portfolio" />;
+  return <Seo />;
 };
 
 export const query = graphql`

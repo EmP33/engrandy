@@ -4,7 +4,6 @@ import { Wrapper } from './Packages.styles';
 import { BsCheck } from 'react-icons/bs';
 
 import {
-  customPack,
   advancedWebsitePack,
   businessWebsitePack,
   landingPagePack,
@@ -12,8 +11,6 @@ import {
 
 const Packages = () => {
   const { t } = useTranslation();
-
-  console.log(landingPagePack);
 
   return (
     <Wrapper>

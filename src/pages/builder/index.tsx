@@ -128,7 +128,18 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     localStorage.setItem(
       'configuration',
-      JSON.stringify({ ...data, totalAmount: configurationPrice }),
+      JSON.stringify({
+        ...data,
+        totalAmount: isNaN(configurationPrice)
+          ? chosenPack === 'landing-page-pack'
+            ? 90
+            : chosenPack === 'business-website-pack'
+            ? 150
+            : chosenPack === 'advanced-website-pack'
+            ? 230
+            : 25
+          : configurationPrice,
+      }),
     );
     navigate(`/order/`);
   };
@@ -843,7 +854,7 @@ const Builder: React.FC<{ location: any }> = ({ location }) => {
 };
 
 export const Head = () => {
-  return <Seo title="Builder" />;
+  return <Seo />;
 };
 
 export const query = graphql`

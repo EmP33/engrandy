@@ -10,8 +10,8 @@ const myCustomQueries = {
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Engrandy`,
-    description: `Order your perfect website`,
+    title: `Professional websites - Create your own website`,
+    description: `We will build a perfect website for you. Use the order builder to accurately personalize and price your order. Professional support. Responsiveness of the website and the best positioning.`,
     author: `Emp33`,
   },
   plugins: [

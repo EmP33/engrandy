@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { graphql } from 'gatsby';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 // Assets
 import SendMessage from '@/assets/SendMessage';
 // Styles
@@ -20,7 +21,14 @@ type Inputs = {
 };
 
 const Contact: React.FC<{ location: any }> = ({ location }) => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const form = useRef();
   const [showNotification, setShowNotification] = useState(false);
+  const [pause, setPause] = useState(false);
   const { t } = useTranslation();
   const {
     register,
@@ -28,7 +36,28 @@ const Contact: React.FC<{ location: any }> = ({ location }) => {
     formState: { errors },
   } = useForm<Inputs>();
   const onSubmit = (data: Inputs) => {
-    setShowNotification(true);
+    setPause(true);
+    emailjs
+      .sendForm(
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        form.current,
+        process.env.API_KEY,
+      )
+      .then(
+        (result: any) => {
+          setFormState({
+            name: '',
+            email: '',
+            message: '',
+          });
+          setPause(false);
+          setShowNotification(true);
+        },
+        (error: any) => {
+          setPause(false);
+        },
+      );
   };
 
   const hideNotification = () => {
@@ -52,11 +81,19 @@ const Contact: React.FC<{ location: any }> = ({ location }) => {
           data-aos-delay="200"
         >
           <SendMessage />
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder={`${t('First name')}*`}
               {...register('name', { required: true })}
+              value={formState.name}
+              onChange={(e: React.ChangeEvent) => {
+                setFormState((prev) => ({
+                  name: e.target.value,
+                  email: prev.email,
+                  message: prev.message,
+                }));
+              }}
             />
             {errors.name && (
               <span role="alert">{t('Name input cannot be blank.')}</span>
@@ -68,6 +105,14 @@ const Contact: React.FC<{ location: any }> = ({ location }) => {
                 required: true,
                 pattern: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i,
               })}
+              value={formState.email}
+              onChange={(e: React.ChangeEvent) => {
+                setFormState((prev) => ({
+                  name: prev.name,
+                  email: e.target.value,
+                  message: prev.message,
+                }));
+              }}
             />
             {errors.email && (
               <span role="alert">{t('Enter correct email address.')}</span>
@@ -76,11 +121,19 @@ const Contact: React.FC<{ location: any }> = ({ location }) => {
               rows={4}
               placeholder={`${t('Message')}*`}
               {...register('message', { required: true })}
+              value={formState.message}
+              onChange={(e: React.ChangeEvent) => {
+                setFormState((prev) => ({
+                  name: prev.name,
+                  email: prev.email,
+                  message: e.target.value,
+                }));
+              }}
             />
             {errors.message && (
               <span role="alert">{t('Message field cannot be blank.')}</span>
             )}
-            <PrimaryButton type="submit" text={t('Send')} />
+            <PrimaryButton disabled={pause} type="submit" text={t('Send')} />
           </form>
         </div>
       </Wrapper>
@@ -105,6 +158,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="Contact" />;
+export const Head = () => <Seo />;
 
 export default Contact;

@@ -72,6 +72,6 @@ export const query = graphql`
   }
 `;
 
-export const Head = () => <Seo title="FAQ" />;
+export const Head = () => <Seo />;
 
 export default FAQ;

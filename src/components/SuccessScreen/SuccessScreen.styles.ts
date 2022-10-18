@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   .message-box {
     background: var(--color-primary);
     color: var(--color-secondary);
-    padding: 3rem;
+    padding: 2.5rem;
     width: 400px;
     height: 300px;
     display: grid;

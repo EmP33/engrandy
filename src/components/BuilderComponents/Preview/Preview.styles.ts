@@ -13,6 +13,11 @@ export const Wrapper = styled.div<{ theme: 'light' | 'dark'; type?: string }>`
   position: relative;
 
   @media only screen and (max-width: 1400px) {
+    width: ${({ type }) => (type === 'order-type' ? '90%' : '90%')};
+    height: ${({ type }) => (type === 'order-type' ? '100%' : '60%')};
+  }
+
+  @media only screen and (max-width: 1400px) {
     width: 90%;
     height: ${({ type }) => (type === 'order-type' ? '90%' : '50%')};
   }

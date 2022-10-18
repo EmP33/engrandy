@@ -59,18 +59,18 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
                 </div>
               </li>
               <li>
-                <Link to="#">
+                <a href="#">
                   {t('Services')} <BiChevronDown />
-                </Link>
+                </a>
                 <div className="dropdown">
                   <div className="dropdown__content">
-                    <Link to="">
+                    <Link to="/services/creating-web-applications">
                       <span>{t('Creating web applications')}</span>
                       <span>
                         {t('Web applications based on React or Gatsby')}
                       </span>
                     </Link>
-                    <Link to="">
+                    <Link to="/services/creating-web-applications">
                       <span>{t('Creating SPA websites')}</span>
                       <span>
                         {t(
@@ -78,7 +78,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
                         )}
                       </span>
                     </Link>
-                    <Link to="">
+                    <Link to="/services/creating-web-applications">
                       <span>{t('Creating portfolio pages')}</span>
                       <span>
                         {t(
@@ -100,7 +100,7 @@ const Header: React.FC<{ location: any }> = ({ location }) => {
               </li>
               <li>
                 <Link to="#">
-                  {location?.pathname?.includes('pl') ? 'PL' : 'EN'}{' '}
+                  {location?.pathname?.includes('/pl') ? 'PL' : 'EN'}{' '}
                   <BiChevronDown />
                 </Link>{' '}
                 <div className="dropdown">

@@ -48,7 +48,7 @@ const Aboutus: React.FC<{ location: any }> = ({ location }) => {
   );
 };
 
-export const Head = () => <Seo title="About us" />;
+export const Head = () => <Seo />;
 
 export const query = graphql`
   query ($language: String!) {

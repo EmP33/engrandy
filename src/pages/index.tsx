@@ -24,7 +24,7 @@ const Home: React.FC<{ location: any }> = ({ location }) => {
 };
 
 export const Head = () => {
-  return <Seo title="Home" />;
+  return <Seo />;
 };
 
 export const query = graphql`
